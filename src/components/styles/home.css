@@ -1,0 +1,108 @@
+/* Hover instagram link */
+@keyframes link-hover-instagram {
+    from {
+        color: black;
+    }
+    to {
+        color: #E06219;
+    }
+}
+
+#footer-link-instagram:hover {
+    animation-name: link-hover-instagram;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+
+
+#footer-link-instagram:not(:hover) .redirection-icon {
+    opacity: 0;
+}
+
+/* Unhover instagram link  */
+@keyframes link-unhover-instagram {
+    from {
+        color: #E06219;
+    }
+    to {
+        color: black;
+    }
+}
+
+#footer-link-instagram:not(:hover) {
+    animation-name: link-unhover-instagram;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+/* Hover github link */
+@keyframes link-hover-github {
+    from {
+        color: black;
+    }
+    to {
+        color: #ee1280;
+    }
+}
+
+#footer-link-github:hover {
+    animation-name: link-hover-github;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+/* Unhover github link */
+@keyframes link-unhover-github {
+    from {
+        color: #ee1280;
+    }
+    to {
+        color: black;
+    }
+}
+
+#footer-link-github:not(:hover) {
+    animation-name: link-unhover-github;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+/* Hover read cv link */
+@keyframes link-hover-read-cv {
+    from {
+        color: black;
+    }
+    to {
+        color: #0000C8;
+    }
+}
+
+#footer-link-read-cv:hover {
+    animation-name: link-hover-read-cv;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+/* Unhover read cv link */
+@keyframes link-unhover-read-cv {
+    from {
+        color: #0000C8;
+    }
+    to {
+        color: black;
+    }
+}
+
+#footer-link-read-cv:not(:hover) {
+    animation-name: link-unhover-read-cv;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
