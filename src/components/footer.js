@@ -1,14 +1,15 @@
 import React from "react";
 import { Container, Flex, Spacer, Box, Text, Divider } from '@chakra-ui/react';
+import "./styles/footer.css";
 
 const Footer = () => {
     return (
         <div>
-            <Container maxW={"7xl"} textAlign={"left"} padding={"100px 0"}>
+            <Container className="footer-global-container" maxW={"7xl"}>
                 <Divider orientation='horizontal' borderWidth={1} borderColor="black" marginBottom={200}/>
 
                 <Flex>
-                    <Box display={"flex"} flexDirection={"column"} fontSize={52} fontWeight={400}>
+                    <Box className="footer-link-wrapper">
                         <Box className="footer-link">
                             <a id="footer-link-instagram" href='https://www.instagram.com/yeftanma/#' target="_blank" rel="noreferrer">Instagram</a>
                         </Box>
@@ -24,7 +25,7 @@ const Footer = () => {
 
                     <Spacer />
 
-                    <Box display={"flex"} alignItems="flex-end" fontSize={17}>
+                    <Box className="footer-copyright-wrapper">
                         <Text>© Copyright 2023</Text>
                     </Box>
                 </Flex>

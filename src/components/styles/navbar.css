@@ -1,0 +1,18 @@
+.navbar-global-container {
+    padding: 60px 0;
+}
+
+.navbar-logo-wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.navbar-links-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 19px;
+    font-weight: 400;
+}

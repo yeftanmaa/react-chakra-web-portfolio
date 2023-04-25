@@ -1,3 +1,26 @@
+.about-global-container {
+    text-align: left;
+    padding: 100px 0;
+}
+
+.about-title-text {
+    font-size: 34px;
+    font-weight: 300;
+}
+
+.about-image-wrapper {
+    margin: 130px 0;
+}
+
+.about-title-wrapper {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.table-body {
+    font-size: 24px;
+}
+
 .table-data {
     padding-top: 50px;
     padding-bottom: 50px;

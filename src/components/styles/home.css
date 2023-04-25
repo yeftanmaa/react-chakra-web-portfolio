@@ -1,3 +1,13 @@
+.home-global-container {
+    text-align: left;
+    padding: 160px 0;
+}
+
+.home-title-wrapper {
+    font-size: 34px;
+    font-weight: 300;
+}
+
 /* Hover instagram link */
 @keyframes link-hover-instagram {
     from {

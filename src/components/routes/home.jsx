@@ -5,9 +5,9 @@ import '../styles/home.css';
 const Home = () => {
     return (
         <div>
-            <Container maxW={"7xl"} textAlign={"left"} padding={"160px 0"}>
+            <Container className="home-global-container" maxW={"7xl"}>
                 <Box>
-                    <Text fontSize={34} w={820} fontWeight={300}>
+                    <Text className="home-title-wrapper" w={820}>
                         Jakarta-based Web Developer and Graphic Designer.<br></br><br></br>
                         My aim is to create lasting impressions through design and technology which I believe that design & technology can adds values faster than it costs.
                     </Text>

@@ -5,19 +5,19 @@ import '../styles/about.css';
 const About = () => {
     return (
         <div>
-            <Container maxW={"7xl"} textAlign={"left"} padding={"100px 0"}>
+            <Container className="about-global-container" maxW={"7xl"}>
                 <Box maxW={700}>
-                    <Text fontSize={34} fontWeight={300}>
+                    <Text className="about-title-text">
                         Currently hustling and brainstorming at a Spain-based digital marketing company.
                     </Text>
                 </Box>
 
-                <Box margin={"130px 0"}>
-                    <Image src="/images/photo.jpg" alt='Johanes Yefta' width={"100%"} height={"100%"} />
+                <Box className="about-image-wrapper">
+                    <Image src="/images/photo.jpg" alt='Johanes Yefta' w={"100%"} h={"100%"} />
                 </Box>
 
-                <Box maxW={700} marginTop={200} marginBottom={200}>
-                    <Text fontSize={34} fontWeight={300}>
+                <Box className="about-title-wrapper" maxW={700}>
+                    <Text className="about-title-text">
                         I enjoy finding creative ways to streamline my belongings and keep my workspace tidy and functional.
                     </Text>
                 </Box>
@@ -25,13 +25,13 @@ const About = () => {
                 <Box>
                     <TableContainer>
                         <Table>
-                            <Tbody fontSize={24}>
+                            <Tbody className="table-body" fontSize={24}>
                                 <Tr>
                                    <Td className="table-data">2022-today</Td>
                                    <Td className="table-data" fontWeight={500}>Demalia</Td>
                                    <Td className="table-data">Web Developer</Td>
                                 </Tr>
-                                <Tr paddingTop={30}>
+                                <Tr>
                                    <Td className="table-data">2022</Td>
                                    <Td className="table-data" fontWeight={500}>Sagara Foundation</Td>
                                    <Td className="table-data">Front-end Specialist</Td>
