@@ -8,6 +8,10 @@
     font-weight: 300;
 }
 
+.about-education-wrapper {
+    margin-top: 200px;
+}
+
 .about-image-wrapper {
     margin: 130px 0;
 }
@@ -21,7 +25,6 @@
     font-size: 24px;
 }
 
-.table-data {
-    padding-top: 50px;
-    padding-bottom: 50px;
+.table-first-row {
+    border-top: 2px solid black;
 }

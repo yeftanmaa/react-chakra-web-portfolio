@@ -1,0 +1,32 @@
+.work-global-container {
+    text-align: left;
+    padding: 160px 0;
+}
+
+.work-title-wrapper {
+    font-size: 34px;
+    font-weight: 300;
+}
+
+.work-clients-wrapper {
+    justify-content: space-between;
+    gap: 20px;
+    margin: 250px 0;
+}
+
+.work-clients-image {
+    width: 150px;
+}
+
+.work-portfolio-details-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.work-portfolio-text-details {
+    font-size: 22px;
+    padding: 2px 0;
+    font-weight: 400;
+}
