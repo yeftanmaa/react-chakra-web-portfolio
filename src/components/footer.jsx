@@ -19,7 +19,7 @@ const Footer = () => {
                         </Box>
                         
                         <Box className="footer-link">
-                            <a id="footer-link-read-cv" href='/read-cv'>Read CV</a>
+                            <a id="footer-link-read-cv" href='https://read.cv/yeftanma' target="_blank" rel="noreferrer">Read CV</a>
                         </Box>
                     </Box>
 

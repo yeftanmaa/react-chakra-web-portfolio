@@ -5,6 +5,11 @@ const theme = extendTheme({
     heading: `'Inter', sans-serif`,
     body: `'Inter', sans-serif`,
   },
+
+  config: {
+    initialColorMode: 'light',
+    useSystemColorMode: false,
+  }
 })
 
 export default theme;

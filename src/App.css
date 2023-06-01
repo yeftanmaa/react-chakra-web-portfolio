@@ -1,3 +1,20 @@
+body {
+  cursor: url('../public/images/cursor.png'), auto;
+}
+
+a:hover {
+  cursor: url('../public/images/cursor-hover.png'), auto;
+}
+
+button:hover {
+  cursor: url('../public/images/cursor-hover.png'), auto;
+}
+
+a, button {
+  padding: 10px 0;
+  cursor: none;
+}
+
 .App {
   text-align: center;
 }

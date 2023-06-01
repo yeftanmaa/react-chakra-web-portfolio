@@ -1,8 +1,10 @@
 import React from "react";
 import { Container, Flex, Spacer, Box } from '@chakra-ui/react';
 import "./styles/navbar.css";
+import ContactForm from "./modals/contact-form";
 
 const Navbar = () => {
+
     return (
         <div>
             <Container className="navbar-global-container" maxW={"7xl"}>
@@ -16,10 +18,11 @@ const Navbar = () => {
                     <Box className="navbar-links-wrapper">
                         <a href="/about">About</a>
                         <a href="/work">Work</a>
-                        <a href="/contact">Contact</a>
+                        <ContactForm />
                     </Box>
                 </Flex>
             </Container>
+            
         </div>
     );
 }

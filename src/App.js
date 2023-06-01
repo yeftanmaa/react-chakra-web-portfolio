@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/routes/home';
 import About from './components/routes/about';
 import Work from './components/routes/work';
-import Contact from './components/routes/contact';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 
@@ -23,7 +22,6 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/work" element={<Work />} />
-            <Route exact path="/contact" element={<Contact />} />
           </Routes>
 
           <Footer />
