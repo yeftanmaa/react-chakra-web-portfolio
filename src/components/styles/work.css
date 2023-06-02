@@ -8,6 +8,17 @@
     font-weight: 300;
 }
 
+.work-footer-local-container {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.work-footer-wrapper {
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+}
+
 .work-clients-wrapper {
     justify-content: space-between;
     gap: 20px;
