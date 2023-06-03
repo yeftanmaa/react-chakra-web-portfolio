@@ -11,7 +11,7 @@ const Work = () => {
                     <Text className="work-title-wrapper" maxW={820}>
                     My experience over past years reached from mobility of
                     
-                    <Text display={"inline"} bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'> digital marketing</Text>,
+                    <Text display="inline" bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'> digital marketing</Text>,
                     
                     <Text display="inline" bgGradient='linear(to-r, red.500, yellow.500)' bgClip="text"> university web project</Text> and 
                     
