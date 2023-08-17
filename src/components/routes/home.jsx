@@ -8,7 +8,7 @@ const Home = () => {
         <div>
             <Container className="home-global-container" maxW={"7xl"}>
                 <Box>
-                    <Text className="home-title-wrapper animate__animated animate__fadeInUp animate__faster" w={820}>
+                    <Text className="home-title-wrapper animate__animated animate__fadeInUp animate__faster" minW={'auto'} maxW={820}>
                         Jakarta-based Web Developer and Graphic Designer.<br></br><br></br>
                         My aim is to create lasting impressions through design and technology which I believe that design & technology can adds values faster than it costs.
                     </Text>

@@ -7,3 +7,14 @@
     font-size: 34px;
     font-weight: 300;
 }
+
+/* Mobile devices */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .home-global-container {
+        padding: 100px 0;    
+    }
+    
+    .home-title-wrapper {
+        font-size: 30px;
+    }
+}

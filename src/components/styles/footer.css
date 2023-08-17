@@ -156,3 +156,16 @@
     margin-left: -25px;
     transition: opacity 0.3s ease-in-out;
 }
+
+/* Mobile devices */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    .footer-link-wrapper {
+        font-size: 50px;
+    }
+}
+
+/* iPads, Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    /* Your styles for iPads and tablets */
+  }

@@ -1,0 +1,29 @@
+@media screen and (min-width: 320px) and (max-width: 480px) {   
+    /* .navbar-form-layout {
+        display: block;
+    } */
+
+    .navbar-form-title {
+        font-size: 35px !important;
+    }
+
+    .navbar-form-label {
+        font-size: 17px !important;
+    }
+
+    .navbar-form-emailTo {
+        font-size: 14px !important;
+        width: 100%;
+        padding: 10px 15px;
+    }
+
+    .navbar-form-emailFrom {
+        font-size: 17px !important;
+        width: 100%;
+    }
+
+    .navbar-form-body {
+        font-size: 17px !important;
+        width: 100%;
+    }
+}

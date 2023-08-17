@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Flex, Spacer, Box, Text, Divider } from '@chakra-ui/react';
+import { Container, Spacer, Box, Text, Divider, Stack } from '@chakra-ui/react';
 import { BsArrowUpShort } from 'react-icons/bs';
 import { useInView } from "react-intersection-observer";
 import { AnimationOnScroll } from "react-animation-on-scroll";
@@ -25,10 +25,7 @@ const Footer = () => {
                         ref={ref}
                     />
 
-                    <Flex
-                        // className={`animate__animated ${inView ? 'animate__fadeIn animate__slow' : ''}`}
-                        // ref={ref}
-                    >
+                    <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 2, md: 8 }}>
                         <Box
                             className="footer-link-wrapper"
                             ref={ref}
@@ -54,7 +51,7 @@ const Footer = () => {
                         <Box className="footer-copyright-wrapper">
                             <Text>© Copyright 2023</Text>
                         </Box>
-                    </Flex>
+                    </Stack>
                 </Container>
             </AnimationOnScroll>
         </div>

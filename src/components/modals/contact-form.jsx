@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Box, Divider, FormControl, FormLabel, Input, ModalCloseButton, Textarea } from '@chakra-ui/react';
 import { Button, Modal, ModalBody, ModalContent, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 import "../styles/navbar.css";
+import "../styles/contact-form.css";
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
+    const [loading, setLoading] = useState(false);
     const {isOpen, onOpen, onClose} = useDisclosure();
     const emailSubject = "Someone wants to get in touch with you!";
 
@@ -17,6 +19,8 @@ const ContactForm = () => {
 
     const sendEmail = async (event) => {
         event.preventDefault();
+
+        setLoading(true);
 
         try {
             const templateParams = {
@@ -39,6 +43,8 @@ const ContactForm = () => {
             onClose();
         } catch (err) {
             console.error("Error sending email", err);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -49,7 +55,7 @@ const ContactForm = () => {
             <Modal isOpen={isOpen} onClose={onClose} isCentered blockScrollOnMount={false}>
                 <ModalOverlay />
 
-                <ModalContent maxW={"3xl"} h={"70vh"} borderRadius={25} position={"relative"}>
+                <ModalContent maxW={"3xl"} minH={"60vh"} borderRadius={25} position={"relative"}>
                     <ModalBody py={90} px={16}>
                         <ModalCloseButton className="modal-close-button" fontSize={20}></ModalCloseButton>
                         <div className="navbar-form-title">Get in touch</div>
@@ -91,7 +97,18 @@ const ContactForm = () => {
                             </Box>
 
                             <Box className="navbar-form-submit-wrapper">
-                                <Button className="navbar-form-submit" type="submit" backgroundColor="black" color="white" _hover={{ backgroundColor: "#222222", cursor: "pointer" }} onClick={sendEmail}>Send</Button>
+                                <Button
+                                    className="navbar-form-submit"
+                                    type="submit"
+                                    backgroundColor="black"
+                                    color="white"
+                                    _hover={{ backgroundColor: "#222222", cursor: "pointer" }}
+                                    isLoading={loading}
+                                    loadingText="Sending..."
+                                    onClick={sendEmail}
+                                >
+                                    Send
+                                </Button>
                             </Box>
                         </FormControl>
                     </ModalBody>

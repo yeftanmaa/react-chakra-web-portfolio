@@ -5,6 +5,7 @@
 .navbar-logo-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 22px;
     font-weight: 400;
 }
@@ -12,6 +13,7 @@
 .navbar-links-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 30px;
     font-size: 19px;
     font-weight: 400;

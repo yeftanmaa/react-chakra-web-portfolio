@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Flex, Spacer, Box } from '@chakra-ui/react';
+import { Container, Stack, Spacer, Box } from '@chakra-ui/react';
 import "./styles/navbar.css";
 import 'animate.css';
 import ContactForm from "./modals/contact-form";
@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <div>
             <Container className="navbar-global-container animate__animated animate__fadeIn" maxW={"7xl"}>
-                <Flex>
+                <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 0, md: 8 }}>
                     <Box className="navbar-logo-wrapper">
                         <a href='/'>Johanes Yefta</a>
                     </Box>
@@ -21,8 +21,9 @@ const Navbar = () => {
                         <a href="/work">Work</a>
                         <ContactForm />
                     </Box>
-                </Flex>
+                </Stack>
             </Container>
+
             
         </div>
     );
