@@ -1,3 +1,7 @@
+.animate_outsideView {
+    display: none;
+}
+
 .footer-global-container {
     text-align: left;
     padding: 100px 0;
