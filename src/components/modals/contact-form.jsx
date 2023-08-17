@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Divider, FormControl, FormLabel, Input, ModalCloseButton, Text, Textarea } from '@chakra-ui/react';
+import { Box, Divider, FormControl, FormLabel, Input, ModalCloseButton, Textarea } from '@chakra-ui/react';
 import { Button, Modal, ModalBody, ModalContent, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 import "../styles/navbar.css";
 import emailjs from 'emailjs-com';
@@ -21,13 +21,22 @@ const ContactForm = () => {
         try {
             const templateParams = {
                 to_email: formData.to,
-                from_name: formData.from,
+                user_email: formData.from,
                 message: formData.body
             };
 
-            await emailjs.send('service_d99p1sk', 'template_web-portfolio', templateParams, '_dZy7QpU4c5pktPH4');
-
+            await emailjs.send('service_s9aef4r', 'template_web-portfolio', templateParams, '_dZy7QpU4c5pktPH4');
             alert('Email sent successfully');
+
+            // Reset form data and close the modal after sending the email
+            setFormData({
+                to: "johanesyefta012@gmail.com",
+                from: "",
+                subject: emailSubject,
+                body: ""
+            });
+
+            onClose();
         } catch (err) {
             console.error("Error sending email", err);
         }
@@ -43,7 +52,7 @@ const ContactForm = () => {
                 <ModalContent maxW={"3xl"} h={"70vh"} borderRadius={25} position={"relative"}>
                     <ModalBody py={90} px={16}>
                         <ModalCloseButton className="modal-close-button" fontSize={20}></ModalCloseButton>
-                        <Text className="navbar-form-title">Get in touch</Text>
+                        <div className="navbar-form-title">Get in touch</div>
                         <FormControl>
                             <Box className="navbar-form-layout" paddingTop={10}>
                                 <FormLabel className="navbar-form-label">To:</FormLabel>
@@ -82,7 +91,7 @@ const ContactForm = () => {
                             </Box>
 
                             <Box className="navbar-form-submit-wrapper">
-                                <Button className="navbar-form-submit" type="submit" backgroundColor="black" color="white" onClick={sendEmail}>Send</Button>
+                                <Button className="navbar-form-submit" type="submit" backgroundColor="black" color="white" _hover={{ backgroundColor: "#222222", cursor: "pointer" }} onClick={sendEmail}>Send</Button>
                             </Box>
                         </FormControl>
                     </ModalBody>

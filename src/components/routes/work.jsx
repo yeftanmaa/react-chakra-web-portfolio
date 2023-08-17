@@ -7,9 +7,15 @@ import { BsArrowRightCircle } from 'react-icons/bs';
 
 const Work = () => {
     const animationVariants = {
-        hidden: { opacity: 0, x: -10 },
-        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0, scale: 0.8, y: 100 },
+        visible: {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          transition: { type: 'spring', stiffness: 300, damping: 20 },
+        },
     };
+         
 
     return (
         <div>
