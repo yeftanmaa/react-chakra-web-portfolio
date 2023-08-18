@@ -41,3 +41,14 @@
     padding: 2px 0;
     font-weight: 400;
 }
+
+/* Mobile devices */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .work-clients-wrapper {
+        align-items: center !important;
+    }
+
+    .work-portfolio-details-wrapper {
+        padding-top: 10px;
+    }
+}

@@ -52,7 +52,7 @@ const ContactForm = () => {
         <>
             <Button className="navbar-button-contact" onClick={onOpen}>Contact</Button>
 
-            <Modal isOpen={isOpen} onClose={onClose} isCentered blockScrollOnMount={false}>
+            <Modal isOpen={isOpen} onClose={onClose} isCentered blockScrollOnMount={true}>
                 <ModalOverlay />
 
                 <ModalContent maxW={"3xl"} minH={"60vh"} borderRadius={25} position={"relative"}>
