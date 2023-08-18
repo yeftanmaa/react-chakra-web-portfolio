@@ -2,6 +2,7 @@ import { Container, Text, Box, Image, TableContainer, Table, Tbody, Tr, Td } fro
 import React from "react";
 import '../styles/about.css';
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { aboutTableData } from "../../json/aboutTableData";
 
 const About = () => {
     return (
@@ -32,21 +33,15 @@ const About = () => {
                         <TableContainer>
                             <Table>
                                 <Tbody className="table-body" fontSize={24}>
-                                    <Tr className="table-first-row">
-                                        <Td padding={"50px 0"} borderBottom={"2px solid black"}>2022-today</Td>
-                                        <Td fontWeight={500} borderBottom={"2px solid black"}>Demalia</Td>
-                                        <Td borderBottom={"2px solid black"}>Web Developer</Td>
-                                    </Tr>
-                                    <Tr>
-                                        <Td padding={"50px 0"} borderBottom={"2px solid black"}>2022</Td>
-                                        <Td fontWeight={500} borderBottom={"2px solid black"}>Sagara Foundation</Td>
-                                        <Td borderBottom={"2px solid black"}>Front-end Specialist</Td>
-                                    </Tr>
-                                    <Tr>
-                                        <Td padding={"50px 0"} borderBottom={"2px solid black"}>2021</Td>
-                                        <Td fontWeight={500} borderBottom={"2px solid black"}>Two Sisters Agency</Td>
-                                        <Td borderBottom={"2px solid black"}>Graphic Designer</Td>
-                                    </Tr>
+                                    {aboutTableData.map((data, key) => {
+                                        return (
+                                            <Tr key={key} className="table-first-row">
+                                                <Td padding={"50px 0"} borderBottom={"2px solid black"}>{data.year}</Td>
+                                                <Td fontWeight={500} borderBottom={"2px solid black"}>{data.company}</Td>
+                                                <Td borderBottom={"2px solid black"}>{data.role}</Td>
+                                            </Tr>
+                                        )
+                                    })}
                                 </Tbody>
                             </Table>
                         </TableContainer>
