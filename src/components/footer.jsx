@@ -11,6 +11,7 @@ const Footer = () => {
         threshold: 0.2,
     });
     
+    const currentYear = new Date().getFullYear();
 
     return (
         <div>
@@ -49,7 +50,7 @@ const Footer = () => {
                         <Spacer />
 
                         <Box className="footer-copyright-wrapper">
-                            <Text>© Copyright 2023</Text>
+                            <Text>© Copyright {currentYear}</Text>
                         </Box>
                     </Stack>
                 </Container>
