@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import { Box, Divider, FormControl, FormLabel, Input, ModalCloseButton, Textarea } from '@chakra-ui/react';
-import { Button, Modal, ModalBody, ModalContent, ModalOverlay, useDisclosure } from "@chakra-ui/react";
+import { Box, Divider, FormControl, FormLabel, Input, ModalCloseButton, Textarea, Button, Modal, ModalBody, ModalContent, ModalOverlay, useDisclosure, useColorMode } from '@chakra-ui/react';
 import "../styles/navbar.css";
 import "../styles/contact-form.css";
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
+    const { colorMode } = useColorMode();
+
+    // Check if the current color mode is dark or light
+    const toColor = colorMode === "dark" ? "white" : "black";
+
     const [loading, setLoading] = useState(false);
     const {isOpen, onOpen, onClose} = useDisclosure();
     const emailSubject = "Someone wants to get in touch with you!";
@@ -57,15 +61,15 @@ const ContactForm = () => {
 
                 <ModalContent maxW={"3xl"} minH={"60vh"} borderRadius={25} position={"relative"}>
                     <ModalBody py={90} px={16}>
-                        <ModalCloseButton className="modal-close-button" fontSize={20}></ModalCloseButton>
+                        <ModalCloseButton border={`2px solid ${toColor}`} className="modal-close-button" fontSize={20}></ModalCloseButton>
                         <div className="navbar-form-title">Get in touch</div>
                         <FormControl>
                             <Box className="navbar-form-layout" paddingTop={10}>
                                 <FormLabel className="navbar-form-label">To:</FormLabel>
-                                <FormLabel className="navbar-form-emailTo">{formData.to}</FormLabel>
+                                <FormLabel className="navbar-form-emailTo" color="black">{formData.to}</FormLabel>
                             </Box>
 
-                            <Divider orientation='horizontal' borderColor="black"/>
+                            <Divider orientation='horizontal' borderColor={toColor}/>
                             
                             <Box className="navbar-form-layout">
                                 <FormLabel className="navbar-form-label" paddingTop={2}>From:</FormLabel>
@@ -79,7 +83,7 @@ const ContactForm = () => {
                                     value={formData.from} />
                             </Box>
 
-                            <Divider orientation='horizontal' borderColor="black"/>
+                            <Divider orientation='horizontal' borderColor={toColor}/>
                             
                             <Box>
                                 <Textarea
@@ -100,9 +104,9 @@ const ContactForm = () => {
                                 <Button
                                     className="navbar-form-submit"
                                     type="submit"
-                                    backgroundColor="black"
-                                    color="white"
-                                    _hover={{ backgroundColor: "#222222", cursor: "pointer" }}
+                                    backgroundColor={toColor}
+                                    color={colorMode === "dark" ? "black" : "white"}
+                                    _hover={{ backgroundColor: colorMode === "dark" ? "#e8e8e8" : "#222222", cursor: "pointer" }}
                                     isLoading={loading}
                                     loadingText="Sending..."
                                     onClick={sendEmail}

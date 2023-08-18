@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Spacer, Box, Text, Divider, Stack } from '@chakra-ui/react';
+import { Container, Spacer, Box, Text, Divider, Stack, useColorMode } from '@chakra-ui/react';
 import { BsArrowUpShort } from 'react-icons/bs';
 import { useInView } from "react-intersection-observer";
 import { AnimationOnScroll } from "react-animation-on-scroll";
@@ -12,6 +12,10 @@ const Footer = () => {
     });
     
     const currentYear = new Date().getFullYear();
+    const { colorMode } = useColorMode();
+
+    // Check if the current color mode is dark or light
+    const toColor = colorMode === "dark" ? "white" : "black";
 
     return (
         <div>
@@ -21,7 +25,7 @@ const Footer = () => {
                         className={`animate__animated ${inView ? 'animate__slideInLeft animate__fast' : 'animate_outsideView'}`}
                         orientation='horizontal'
                         borderWidth={1}
-                        borderColor="black"
+                        borderColor={toColor}
                         marginBottom={150}
                         ref={ref}
                     />

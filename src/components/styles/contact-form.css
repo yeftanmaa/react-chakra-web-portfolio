@@ -1,8 +1,4 @@
 @media screen and (min-width: 320px) and (max-width: 480px) {   
-    /* .navbar-form-layout {
-        display: block;
-    } */
-
     .navbar-form-title {
         font-size: 35px !important;
     }

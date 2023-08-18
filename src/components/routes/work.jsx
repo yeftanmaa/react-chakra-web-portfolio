@@ -29,7 +29,7 @@ const Work = () => {
                     
                     <Text display="inline" bgGradient='linear(to-r, red.500, yellow.500)' bgClip="text"> university web project</Text> and 
                     
-                    <Text display="inline" bgGradient='linear(to-r, #30CFD0, #330867)' bgClip="text"> graphic design project.</Text>
+                    <Text display="inline" bgGradient='linear-gradient(to right, #f953c7, #ff517e, #ff7a38, #dca600, #93c71b);' bgClip="text"> graphic design project.</Text>
                     </Text>
                 </Box>
 
@@ -98,7 +98,7 @@ const Work = () => {
                                 <CardBody padding={0}>
                                     <Image src={data.imageSrc}/>
                                 </CardBody>
-                                <CardFooter flexDirection={{ base: "column", md: "row" }} padding={"45px 0"} justifyContent="space-between">
+                                <CardFooter flexDirection={{ base: "column", md: "row" }} padding={"45px 25px 45px 15px"} justifyContent="space-between">
                                     <Box>
                                         <Heading as="h1" fontWeight={400}>{data.title}</Heading>
                                     </Box>

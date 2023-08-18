@@ -42,7 +42,7 @@
         color: #E06219;
     }
     to {
-        color: black;
+        color: var(--toColor);
     }
 }
 
@@ -74,7 +74,7 @@
         color: #ee1280;
     }
     to {
-        color: black;
+        color: var(--toColor);
     }
 }
 
@@ -106,7 +106,7 @@
         color: #0000C8;
     }
     to {
-        color: black;
+        color: var(--toColor);
     }
 }
 

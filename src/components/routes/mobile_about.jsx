@@ -1,10 +1,15 @@
-import { Container, Text, Box, Image, Divider } from "@chakra-ui/react";
+import { Container, Text, Box, Image, Divider, useColorMode } from "@chakra-ui/react";
 import React from "react";
 import '../styles/about.css';
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { aboutTableData } from "../../json/aboutTableData";
 
 const MobileAbout = () => {
+    const { colorMode } = useColorMode();
+
+    // Check if the current color mode is dark or light
+    const toColor = colorMode === "dark" ? "white" : "black";
+
     return (
         <div>
             <Container className="about-global-container" maxW={"7xl"}>
@@ -35,7 +40,7 @@ const MobileAbout = () => {
                                 <Divider
                                     orientation='horizontal'
                                     borderWidth={1}
-                                    borderColor="black"
+                                    borderColor={toColor}
                                 />
 
                                 <Box marginY={25} fontSize={23} lineHeight={2}>
@@ -52,7 +57,7 @@ const MobileAbout = () => {
                         <Divider
                             orientation='horizontal'
                             borderWidth={1}
-                            borderColor="black"
+                            borderColor={toColor}
                         />
                 </AnimationOnScroll>
 

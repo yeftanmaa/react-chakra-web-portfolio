@@ -1,10 +1,15 @@
-import { Container, Text, Box, Image, TableContainer, Table, Tbody, Tr, Td } from "@chakra-ui/react";
+import { Container, Text, Box, Image, TableContainer, Table, Tbody, Tr, Td, useColorMode } from "@chakra-ui/react";
 import React from "react";
 import '../styles/about.css';
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { aboutTableData } from "../../json/aboutTableData";
 
 const About = () => {
+    const { colorMode } = useColorMode();
+
+    // Check if the current color mode is dark or light
+    const toColor = colorMode === "dark" ? "white" : "black";
+
     return (
         <div>
             <Container className="about-global-container" maxW={"7xl"}>
@@ -35,10 +40,10 @@ const About = () => {
                                 <Tbody className="table-body" fontSize={24}>
                                     {aboutTableData.map((data, key) => {
                                         return (
-                                            <Tr key={key} className="table-first-row">
-                                                <Td padding={"50px 0"} borderBottom={"2px solid black"}>{data.year}</Td>
-                                                <Td fontWeight={500} borderBottom={"2px solid black"}>{data.company}</Td>
-                                                <Td borderBottom={"2px solid black"}>{data.role}</Td>
+                                            <Tr key={key} borderTop={`2px solid ${toColor}`} className="table-first-row">
+                                                <Td padding={"50px 0"} borderBottom={`2px solid ${toColor}`}>{data.year}</Td>
+                                                <Td fontWeight={500} borderBottom={`2px solid ${toColor}`}>{data.company}</Td>
+                                                <Td borderBottom={`2px solid ${toColor}`}>{data.role}</Td>
                                             </Tr>
                                         )
                                     })}
