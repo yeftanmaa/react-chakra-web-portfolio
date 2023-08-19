@@ -6,9 +6,7 @@ import emailjs from 'emailjs-com';
 import AlertInfo from "./alert";
 
 const ContactForm = () => {
-    const serviceKey = process.env.EMAIL_SERVICES_KEY;
-    const publicKey = process.env.EMAIL_PUBLIC_KEY;
-    const templateName = process.env.EMAIL_TEMPLATE_NAME;
+    // const { REACT_APP_EMAIL_SERVICES_KEY, REACT_APP_EMAIL_TEMPLATE_NAME, REACT_APP_EMAIL_PUBLIC_KEY} = process.env;
     
     const { colorMode } = useColorMode();
     const [alert, setAlert] = useState(null); // State for the alert
@@ -47,7 +45,7 @@ const ContactForm = () => {
                 message: formData.body
             };
 
-            await emailjs.send(serviceKey, templateName, templateParams, publicKey);
+            await emailjs.send(process.env.EMAIL_SERVICES_KEY, process.env.EMAIL_TEMPLATE_NAME, templateParams, process.env.EMAIL_PUBLIC_KEY);
             showAlert("success", "Yay, Email sent successfully!");
 
             // Reset form data and close the modal after sending the email
