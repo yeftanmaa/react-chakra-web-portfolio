@@ -14,6 +14,17 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
     const { colorMode, toggleColorMode } = useColorMode();
 
+    // Smooth color switching animation 
+    const styleEl = document.createElement('style');
+    const cssText = document.createTextNode(
+      'html * { transition: color, background-color 0.3s ease-out!important }',
+    );
+    styleEl.appendChild(cssText);
+    document.head.appendChild(styleEl);
+    setTimeout(() => {
+      document.head.removeChild(styleEl);
+    }, 300);
+
     // Check if the current color mode is dark or light
     const toColor = colorMode === "dark" ? "white" : "black";
 
