@@ -3,9 +3,15 @@ import { Box, Divider, FormControl, FormLabel, Input, ModalCloseButton, Textarea
 import "../styles/navbar.css";
 import "../styles/contact-form.css";
 import emailjs from 'emailjs-com';
+import AlertInfo from "./alert";
 
 const ContactForm = () => {
+    const serviceKey = process.env.EMAIL_SERVICES_KEY;
+    const publicKey = process.env.EMAIL_PUBLIC_KEY;
+    const templateName = process.env.EMAIL_TEMPLATE_NAME;
+    
     const { colorMode } = useColorMode();
+    const [alert, setAlert] = useState(null); // State for the alert
 
     // Check if the current color mode is dark or light
     const toColor = colorMode === "dark" ? "white" : "black";
@@ -21,6 +27,14 @@ const ContactForm = () => {
         body: ""
     })
 
+    const showAlert = (status, info) => {
+        setAlert(<AlertInfo status={status} info={info} />);
+
+        setTimeout(() => {
+            setAlert(null); // Remove the alert
+        }, 3000);
+    }
+
     const sendEmail = async (event) => {
         event.preventDefault();
 
@@ -33,8 +47,8 @@ const ContactForm = () => {
                 message: formData.body
             };
 
-            await emailjs.send('service_s9aef4r', 'template_web-portfolio', templateParams, '_dZy7QpU4c5pktPH4');
-            alert('Email sent successfully');
+            await emailjs.send(serviceKey, templateName, templateParams, publicKey);
+            showAlert("success", "Yay, Email sent successfully!");
 
             // Reset form data and close the modal after sending the email
             setFormData({
@@ -46,7 +60,7 @@ const ContactForm = () => {
 
             onClose();
         } catch (err) {
-            console.error("Error sending email", err);
+            showAlert("error", "An error occurred while trying to send your email");
         } finally {
             setLoading(false);
         }
@@ -118,6 +132,17 @@ const ContactForm = () => {
                     </ModalBody>
                 </ModalContent>
             </Modal>
+
+            <div
+                style={{
+                    position: "fixed",
+                    bottom: "20px",
+                    left: "20px", 
+                    zIndex: "9999"
+                }}
+            >
+                {alert}
+            </div>
         </>
     );
 }
