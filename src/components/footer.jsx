@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Spacer, Box, Text, Divider, Stack, useColorMode } from '@chakra-ui/react';
+import { Container, Spacer, Box, Text, Divider, Stack, useColorMode, Image, Switch } from '@chakra-ui/react';
 import { BsArrowUpShort } from 'react-icons/bs';
 import { useInView } from "react-intersection-observer";
 import { AnimationOnScroll } from "react-animation-on-scroll";
@@ -12,7 +12,7 @@ const Footer = () => {
     });
     
     const currentYear = new Date().getFullYear();
-    const { colorMode } = useColorMode();
+    const { colorMode, toggleColorMode } = useColorMode();
 
     // Check if the current color mode is dark or light
     const toColor = colorMode === "dark" ? "white" : "black";
@@ -54,6 +54,11 @@ const Footer = () => {
                         <Spacer />
 
                         <Box className="footer-copyright-wrapper">
+                            <Box display="flex" gap={2}>
+                                <Image src="/icons/light-mode-icon.svg" />
+                                <Switch isChecked={colorMode === "dark"} onChange={toggleColorMode} size="lg" />
+                                <Image src="/icons/dark-mode-icon.svg" />
+                            </Box>
                             <Text>© Copyright {currentYear}</Text>
                         </Box>
                     </Stack>

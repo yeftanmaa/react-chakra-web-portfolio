@@ -1,13 +1,10 @@
 import React from "react";
-import { Container, Stack, Spacer, Box, Switch, useColorMode } from '@chakra-ui/react';
+import { Container, Stack, Spacer, Box } from '@chakra-ui/react';
 import "./styles/navbar.css";
 import 'animate.css';
 import ContactForm from "./modals/contact-form";
 
 const Navbar = () => {
-
-    const { colorMode, toggleColorMode } = useColorMode();
-
     return (
         <div>
             <Container className="navbar-global-container animate__animated animate__fadeIn" maxW={"7xl"}>
@@ -22,7 +19,6 @@ const Navbar = () => {
                         <a href="/about">About</a>
                         <a href="/work">Work</a>
                         <ContactForm />
-                        <Switch isChecked={colorMode === "dark"} onChange={toggleColorMode} size="md" />
                     </Box>
                 </Stack>
             </Container>
