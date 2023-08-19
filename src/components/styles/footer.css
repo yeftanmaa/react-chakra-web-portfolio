@@ -16,7 +16,7 @@
 
 .footer-copyright-wrapper {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: flex-end;
     font-size: 17px;
