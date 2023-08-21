@@ -45,7 +45,7 @@ const ContactForm = () => {
                 message: formData.body
             };
 
-            await emailjs.send('service_s9aef4r', 'template_web-portfolio', templateParams, '_dZy7QpU4c5pktPH4');
+            await emailjs.send(process.env.REACT_APP_EMAIL_SERVICES_KEY, process.env.REACT_APP_EMAIL_TEMPLATE_NAME, templateParams, process.env.REACT_APP_EMAIL_PUBLIC_KEY);
             showAlert("success", "Yay, Email sent successfully!");
 
             // Reset form data and close the modal after sending the email
