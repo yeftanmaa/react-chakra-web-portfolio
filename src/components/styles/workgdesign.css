@@ -1,0 +1,15 @@
+.workgdesign-global-container {
+    text-align: left;
+    padding: 20px 0;
+}
+
+.workgdesign-title-wrapper {
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.tab-header {
+    font-weight: 500 !important;
+}

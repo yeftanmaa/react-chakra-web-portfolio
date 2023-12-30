@@ -6,6 +6,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 import "./styles/footer.css";
 
 const Footer = () => {
+    // Check inView to trigger component
     const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.2,
@@ -30,7 +31,7 @@ const Footer = () => {
 
     return (
         <div>
-            <AnimationOnScroll animateIn="animate__fadeIn">
+            <AnimationOnScroll initiallyVisible={true} animateIn="animate__fadeIn">
                 <Container className="footer-global-container" maxW={"7xl"}>
                     <Divider
                         className={`animate__animated ${inView ? 'animate__slideInLeft animate__fast' : 'animate_outsideView'}`}
