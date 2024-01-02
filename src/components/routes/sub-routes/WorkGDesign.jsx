@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Container, Grid, GridItem, Image, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import '../../styles/workgdesign.css';
 import TypewriterComponent from "typewriter-effect";
 
 const WorkGDesign = () => {
+    // Automatically reset scroll to top
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, [])
+    
     return (
         <div>
             <Container className="workgdesign-global-container" maxW={"7xl"}>
