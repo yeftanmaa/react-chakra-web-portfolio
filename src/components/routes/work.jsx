@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Box, Text, Image, Card, CardBody, CardFooter, Heading, IconButton, Stack } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import '../styles/work.css';
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { motion } from "framer-motion";
@@ -16,7 +17,14 @@ const Work = () => {
           transition: { type: 'spring', stiffness: 300, damping: 20 },
         },
     };
-         
+
+    // Function: Redirect user to specific work page
+    const navigate = useNavigate();
+    const redirectTo = (path) => {
+        if (path === 'gDesign') {
+            navigate(`/work/graphic-design`);
+        }
+    };
 
     return (
         <div>
@@ -109,7 +117,20 @@ const Work = () => {
                                             <Text className="work-portfolio-text-details">{data.platform}</Text>
                                         </Box>
                                         <Box>
-                                            <IconButton icon={<BsArrowRightCircle size={45}/>} variant="outline" border={0} />
+                                            <IconButton
+                                                icon={<BsArrowRightCircle size={45}/>}
+                                                variant="outline"
+                                                border={0}
+                                                onClick={() => {
+                                                    if (data.title === 'Business – Branding & Images') {
+                                                        redirectTo('gDesign');
+                                                    } else if (data.title === 'Sagara Foundation Project') {
+                                                        redirectTo('sagaraProject');
+                                                    } else if (data.title === 'Familist Project') {
+                                                        redirectTo('familistProject');
+                                                    }
+                                                }}
+                                            />
                                         </Box>
                                     </Box>
                                 </CardFooter>
