@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Container, Grid, GridItem, Image, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import '../../styles/workgdesign.css';
 import TypewriterComponent from "typewriter-effect";
@@ -9,6 +9,23 @@ const WorkGDesign = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, [])
     
+
+    // Set state to control image on hover
+    const [onHover, setOnHover] = useState(false);
+    const [imageSrc, setImageSrc] = useState('');
+
+    const showOnHover = (event) => {
+        setOnHover(true);
+        event.target.classList.add('hovered');
+        const source = event.currentTarget.getAttribute('src');
+        setImageSrc(source);
+    };
+
+    const hideOnHover = (event) => {
+        setOnHover(false);
+        event.target.classList.remove('hovered');
+    };
+    
     return (
         <div>
             <Container className="workgdesign-global-container" maxW={"7xl"}>
@@ -16,7 +33,7 @@ const WorkGDesign = () => {
             <Box className="workgdesign-title-wrapper">
                 <TypewriterComponent
                     options={{
-                        strings: 'Delight on my <b>most-popular </b>design over a few years.',
+                        strings: 'Delight on my <b>most-popular </b>design over past few years.',
                         autoStart: true,
                         delay: 50
                     }}
@@ -49,24 +66,91 @@ const WorkGDesign = () => {
                             gap={4}
                             className="grid-tab-all"
                         >
-                            <GridItem gridArea="1 / 1 / 5 / 2" className="tab-all-div1" bg='papayawhip'>
-                                <Image src="/images/IG Feeds_The King is Risen.jpg" className="grid-tab-all-image-1" width={'100%'} height={'100%'} objectFit={"cover"} />
+                            <GridItem gridArea="1 / 1 / 5 / 2" className="tab-all-div1" bg='whitesmoke'>
+                                
+                                { onHover && imageSrc.includes('IG Feeds_The King is Risen') && (
+                                    <div className="overlay-text">
+                                        <p>The King is Risen</p>
+                                    </div>
+                                )}
+
+                                <Image
+                                    loading="lazy"
+                                    src="/images/IG Feeds_The King is Risen.jpg" className="grid-tab-all-image-1"
+                                    width='100%'
+                                    height='100%'
+                                    objectFit='cover'
+                                    onMouseOver={showOnHover}
+                                    onMouseOut={hideOnHover}
+                                />
                             </GridItem>
 
-                            <GridItem gridArea="1 / 2 / 3 / 4" className="tab-all-div2" bg='papayawhip'>
-                                <Image src="/images/IG Feeds_ISOMAN Pack_V04.jpg" />
+                            <GridItem gridArea="1 / 2 / 3 / 4" className="tab-all-div2" bg='whitesmoke'>
+
+                                { onHover && imageSrc.includes('IG Feeds_ISOMAN Pack_V04') && (
+                                    <div className="overlay-text">
+                                        <p>AppleHerbs</p>
+                                    </div>
+                                )}
+
+                                <Image
+                                    loading="lazy"
+                                    src="/images/IG Feeds_ISOMAN Pack_V04.jpg"
+                                    className="grid-tab-all-image-g"
+                                    onMouseOver={showOnHover}
+                                    onMouseOut={hideOnHover}
+                                />
                             </GridItem>
 
-                            <GridItem gridArea="1 / 4 / 3 / 6" className="tab-all-div3" bg='papayawhip'>
-                            <Image src="/images/IG Feeds_Extended Grace.jpg" />
+                            <GridItem gridArea="1 / 4 / 3 / 6" className="tab-all-div3" bg='whitesmoke'>
+
+                                { onHover && imageSrc.includes('IG Feeds_Extended Grace') && (
+                                    <div className="overlay-text">
+                                        <p>Extended Grace</p>
+                                    </div>
+                                )}
+
+                                <Image
+                                    loading="lazy"
+                                    src="/images/IG Feeds_Extended Grace.jpg"
+                                    className="grid-tab-all-image-g"
+                                    onMouseOver={showOnHover}
+                                    onMouseOut={hideOnHover}
+                                />
                             </GridItem>
 
-                            <GridItem gridArea="3 / 2 / 5 / 4" className="tab-all-div4" bg='papayawhip'>
-                            <Image src="/images/IG Feeds_How to Get More Engagement_SLIDE-01.jpg" />
+                            <GridItem gridArea="3 / 2 / 5 / 4" className="tab-all-div4" bg='whitesmoke'>
+
+                                { onHover && imageSrc.includes('IG Feeds_How to Get More Engagement_SLIDE-01') && (
+                                    <div className="overlay-text">
+                                        <p>Two Sisters Agency</p>
+                                    </div>
+                                )}
+
+                                <Image
+                                    loading="lazy"
+                                    src="/images/IG Feeds_How to Get More Engagement_SLIDE-01.jpg"
+                                    className="grid-tab-all-image-g"
+                                    onMouseOver={showOnHover}
+                                    onMouseOut={hideOnHover}
+                                />
                             </GridItem>
                             
-                            <GridItem gridArea="3 / 4 / 5 / 6" className="tab-all-div5" bg='papayawhip'>
-                            <Image src="/images/IG Feeds_Custom Services_SLIDE-02.jpg" />
+                            <GridItem gridArea="3 / 4 / 5 / 6" className="tab-all-div5" bg='smokewhite'>
+
+                                { onHover && imageSrc.includes('IG Feeds_Custom Services_SLIDE-02') && (
+                                    <div className="overlay-text">
+                                        <p>Two Sisters Agency</p>
+                                    </div>
+                                )}
+
+                                <Image
+                                    loading="lazy"
+                                    src="/images/IG Feeds_Custom Services_SLIDE-02.jpg"
+                                    className="grid-tab-all-image-g"
+                                    onMouseOver={showOnHover}
+                                    onMouseOut={hideOnHover}
+                                />
                             </GridItem>
                         </Grid>
 
@@ -77,28 +161,28 @@ const WorkGDesign = () => {
                             gap={4}
                             className="grid2-tab-all"
                         >
-                            <GridItem gridArea="1 / 1 / 3 / 4" className="tab-all-div6" bg='papayawhip'>
-                                <Image src="/images/Render-05.jpg" width={'100%'} height={'100%'} objectFit="cover" />
+                            <GridItem gridArea="1 / 1 / 3 / 4" className="tab-all-div6" bg='smokewhite'>
+                                <Image loading="lazy" src="/images/Render-05.jpg" width={'100%'} height={'100%'} objectFit="cover" />
                             </GridItem>
 
-                            <GridItem gridArea="1 / 4 / 3 / 5" className="tab-all-div7" bg='papayawhip'>
-                                <Image src="/images/Poster Teaser 3_What Happened To The Crowns.jpg" width='100%' height='100%' objectFit="cover" />
+                            <GridItem gridArea="1 / 4 / 3 / 5" className="tab-all-div7" bg='smokewhite'>
+                                <Image loading="lazy" src="/images/Poster Teaser 3_What Happened To The Crowns.jpg" width='100%' height='100%' objectFit="cover" />
                             </GridItem>
 
-                            <GridItem gridArea="3 / 1 / 5 / 2" className="tab-all-div8" bg='papayawhip'>
-                                <Image src="/images/Day-08_SLIDE-01.jpg" />
+                            <GridItem gridArea="3 / 1 / 5 / 2" className="tab-all-div8" bg='smokewhite'>
+                                <Image loading="lazy" src="/images/Day-08_SLIDE-01.jpg" />
                             </GridItem>
 
-                            <GridItem gridArea="3 / 2 / 5 / 3" className="tab-all-div9" bg='papayawhip'>
-                                <Image src="/images/Day-22A.jpg" />
+                            <GridItem gridArea="3 / 2 / 5 / 3" className="tab-all-div9" bg='smokewhite'>
+                                <Image loading="lazy" src="/images/Day-22A.jpg" />
                             </GridItem>
 
-                            <GridItem gridArea="3 / 3 / 5 / 4" className="tab-all-div10" bg='papayawhip'>
-                                <Image src="/images/IG Feeds_002_Revolution Bright_B_v01.jpg" />
+                            <GridItem gridArea="3 / 3 / 5 / 4" className="tab-all-div10" bg='smokewhite'>
+                                <Image loading="lazy" src="/images/IG Feeds_002_Revolution Bright_B_v01.jpg" />
                             </GridItem>
 
-                            <GridItem gridArea="3 / 4 / 5 / 5" className="tab-all-div11" bg='papayawhip'>
-                                <Image src="/images/IG Feeds_Christmas Special Edition.jpg" />
+                            <GridItem gridArea="3 / 4 / 5 / 5" className="tab-all-div11" bg='smokewhite'>
+                                <Image loading="lazy" src="/images/IG Feeds_Christmas Special Edition.jpg" />
                             </GridItem>
 
                         </Grid>
@@ -113,28 +197,28 @@ const WorkGDesign = () => {
                             marginBottom={100}
                             className="grid-tab-business-branding"
                         >
-                            <GridItem gridArea='1 / 1 / 3 / 2' bg='papayawhip'>
-                                <Image src="/images/IG Feeds_ISOMAN Pack_V04.jpg" />
+                            <GridItem gridArea='1 / 1 / 3 / 2' bg='smokewhite'>
+                                <Image loading="lazy" src="/images/IG Feeds_ISOMAN Pack_V04.jpg" />
                             </GridItem>
 
-                            <GridItem gridArea='1 / 2 / 3 / 3' bg='papayawhip'>
-                                <Image src="/images/IG Feeds_Custom Services_SLIDE-02.jpg" />
+                            <GridItem gridArea='1 / 2 / 3 / 3' bg='smokewhite'>
+                                <Image loading="lazy" src="/images/IG Feeds_Custom Services_SLIDE-02.jpg" />
                             </GridItem>
 
-                            <GridItem gridArea='1 / 3 / 3 / 4' bg='papayawhip'>
-                                <Image src="/images/Day-08_SLIDE-01.jpg" />
+                            <GridItem gridArea='1 / 3 / 3 / 4' bg='smokewhite'>
+                                <Image loading="lazy" src="/images/Day-08_SLIDE-01.jpg" />
                             </GridItem>
 
-                            <GridItem gridArea='3 / 1 / 5 / 2' bg='papayawhip'>
-                                <Image src="/images/Day-22A.jpg" />
+                            <GridItem gridArea='3 / 1 / 5 / 2' bg='smokewhite'>
+                                <Image loading="lazy" src="/images/Day-22A.jpg" />
                             </GridItem>
 
-                            <GridItem gridArea='3 / 2 / 5 / 3' bg='papayawhip'>
-                                <Image src="/images/IG Feeds_How to Get More Engagement_SLIDE-01.jpg" />
+                            <GridItem gridArea='3 / 2 / 5 / 3' bg='smokewhite'>
+                                <Image loading="lazy" src="/images/IG Feeds_How to Get More Engagement_SLIDE-01.jpg" />
                             </GridItem>
 
-                            <GridItem gridArea='3 / 3 / 5 / 4' bg='papayawhip'>
-                                <Image src="/images/IG Feeds_002_Revolution Bright_B_v01.jpg" />
+                            <GridItem gridArea='3 / 3 / 5 / 4' bg='smokewhite'>
+                                <Image loading="lazy" src="/images/IG Feeds_002_Revolution Bright_B_v01.jpg" />
                             </GridItem>
                         </Grid>
                     </TabPanel>
@@ -143,7 +227,7 @@ const WorkGDesign = () => {
                     <TabPanel>
                         <Grid>
                             <GridItem>
-                                <Image src="/images/IG Feeds_Extended Grace.jpg" className="grid-tab-streetwear-image-1" />
+                                <Image loading="lazy" src="/images/IG Feeds_Extended Grace.jpg" className="grid-tab-streetwear-image-1" />
                             </GridItem>
                         </Grid>
                     </TabPanel>
@@ -157,11 +241,11 @@ const WorkGDesign = () => {
                             className="grid-tab-3d-design"
                         >
                             <GridItem gridArea='1 / 1 / 3 / 4'>
-                                <Image src="/images/Render-05.jpg" width={'100%'} height={'100%'} objectFit="cover" />
+                                <Image loading="lazy" src="/images/Render-05.jpg" width={'100%'} height={'100%'} objectFit="cover" />
                             </GridItem>
 
                             <GridItem gridArea='1 / 4 / 3 / 5'>
-                                <Image src="/images/Poster Teaser 3_What Happened To The Crowns.jpg" width='100%' height='100%' objectFit="cover" />
+                                <Image loading="lazy" src="/images/Poster Teaser 3_What Happened To The Crowns.jpg" width='100%' height='100%' objectFit="cover" />
                             </GridItem>
                         </Grid>
                     </TabPanel>

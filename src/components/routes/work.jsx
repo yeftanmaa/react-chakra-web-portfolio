@@ -50,7 +50,7 @@ const Work = () => {
                         transition={{ duration: 0.2 }}
                     >
                         <Box className="work-clients-image">
-                            <Image src="/images/two-sisters.png" objectFit={"cover"} />
+                            <Image loading="lazy" src="/images/two-sisters.png" objectFit={"cover"} />
                         </Box>
                     </motion.div>
                     
@@ -61,7 +61,7 @@ const Work = () => {
                         transition={{ duration: 0.7 }}
                     >
                         <Box className="work-clients-image">
-                            <Image src="/images/khayalan-studio.png" objectFit={"cover"} />
+                            <Image loading="lazy" src="/images/khayalan-studio.png" objectFit={"cover"} />
                         </Box>
                     </motion.div>
 
@@ -72,7 +72,7 @@ const Work = () => {
                         transition={{ duration: 1.2 }}
                     >
                         <Box width={100}>
-                            <Image src="/images/ODA.png" objectFit={"cover"} />
+                            <Image loading="lazy" src="/images/ODA.png" objectFit={"cover"} />
                         </Box>
                     </motion.div>
                     
@@ -83,7 +83,7 @@ const Work = () => {
                         transition={{ duration: 1.4 }}
                     >
                         <Box className="work-clients-image">
-                            <Image src="/images/Demalia.png" objectFit={"cover"} />
+                            <Image loading="lazy" src="/images/Demalia.png" objectFit={"cover"} />
                         </Box>
                     </motion.div>
 
@@ -94,7 +94,7 @@ const Work = () => {
                         transition={{ duration: 1.7 }}
                     >
                         <Box className="work-clients-image">
-                            <Image src="/images/Familist.png" objectFit={"cover"} />
+                            <Image loading="lazy" src="/images/Familist.png" objectFit={"cover"} />
                         </Box>
                     </motion.div>
                 </Stack>
@@ -104,7 +104,7 @@ const Work = () => {
                         <AnimationOnScroll initiallyVisible={false} animateOnce={true} animatePreScroll={false} animateIn="animate__fadeIn" offset={300}>
                             <Card key={key} boxShadow="none" marginBottom={150}>
                                 <CardBody padding={0}>
-                                    <Image src={data.imageSrc}/>
+                                    <Image loading="lazy" src={data.imageSrc}/>
                                 </CardBody>
                                 <CardFooter flexDirection={{ base: "column", md: "row" }} padding={"45px 25px 45px 15px"} justifyContent="space-between">
                                     <Box>
