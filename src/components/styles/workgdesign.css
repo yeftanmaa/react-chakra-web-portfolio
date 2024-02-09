@@ -18,6 +18,10 @@
     width: 530px;
 }
 
+.tab-all-div1, .tab-all-div2, .tab-all-div3, .tab-all-div4, .tab-all-div5 {
+    position: relative;
+}
+
 .grid2-tab-all {
     height: 700px;
     margin-top: 18px;
@@ -30,8 +34,23 @@
     object-fit: cover;
 }
 
+.grid-tab-all-image-1, .grid-tab-all-image-g {
+    transition: opacity 0.3s ease-in-out;
+}
+
 .grid-tab-streetwear-image-1 {
     max-width: 400px;
+}
+
+.grid-tab-all-image-1.hovered, .grid-tab-all-image-g.hovered {
+    opacity: 0.07;
+}
+
+.overlay-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
 }
 
 /* Mobile devices */
