@@ -21,7 +21,7 @@ const About = () => {
                 
                 <AnimationOnScroll initiallyVisible={false} animateOnce={true} animatePreScroll={false} animateIn="animate__fadeIn">
                     <Box className="about-image-wrapper">
-                        <Image loading="lazy" src="/images/photo.jpg" alt='Johanes Yefta' w={"100%"} h={"100%"} />
+                        <Image loading="lazy" src="/images/photo.jpg" alt='Profile Photo: Johanes Yefta' w={"100%"} h={"100%"} />
                     </Box>
                 </AnimationOnScroll>
 

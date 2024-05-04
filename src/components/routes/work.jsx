@@ -6,6 +6,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 import { motion } from "framer-motion";
 import { BsArrowRightCircle } from 'react-icons/bs';
 import { workExpData } from "../../json/workExpData";
+import { clientData } from "../../json/clientData";
 
 const Work = () => {
     const animationVariants = {
@@ -42,61 +43,22 @@ const Work = () => {
                 </Box>
 
                 <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 2, md: 8 }} className="work-clients-wrapper">
-                    
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={animationVariants}
-                        transition={{ duration: 0.2 }}
-                    >
-                        <Box className="work-clients-image">
-                            <Image loading="lazy" src="/images/two-sisters.png" objectFit={"cover"} />
-                        </Box>
-                    </motion.div>
-                    
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={animationVariants}
-                        transition={{ duration: 0.7 }}
-                    >
-                        <Box className="work-clients-image">
-                            <Image loading="lazy" src="/images/khayalan-studio.png" objectFit={"cover"} />
-                        </Box>
-                    </motion.div>
 
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={animationVariants}
-                        transition={{ duration: 1.2 }}
-                    >
-                        <Box width={100}>
-                            <Image loading="lazy" src="/images/ODA.png" objectFit={"cover"} />
-                        </Box>
-                    </motion.div>
-                    
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={animationVariants}
-                        transition={{ duration: 1.4 }}
-                    >
-                        <Box className="work-clients-image">
-                            <Image loading="lazy" src="/images/Demalia.png" objectFit={"cover"} />
-                        </Box>
-                    </motion.div>
-
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={animationVariants}
-                        transition={{ duration: 1.7 }}
-                    >
-                        <Box className="work-clients-image">
-                            <Image loading="lazy" src="/images/Familist.png" objectFit={"cover"} />
-                        </Box>
-                    </motion.div>
+                    {clientData.map((data, key) => {
+                        return (
+                            <motion.div
+                                key={key}
+                                initial="hidden"
+                                animate="visible"
+                                variants={animationVariants}
+                                transition={{ duration: data.duration }}
+                            >
+                                <Box className="work-clients-image">
+                                    <Image loading="lazy" src={data.imageSrc} objectFit="cover" alt={data.alt} />
+                                </Box>
+                            </motion.div>
+                        )
+                    })}
                 </Stack>
 
                 {workExpData.map((data, key) => {
@@ -104,7 +66,7 @@ const Work = () => {
                         <AnimationOnScroll initiallyVisible={false} animateOnce={true} animatePreScroll={false} animateIn="animate__fadeIn" offset={300}>
                             <Card key={key} boxShadow="none" marginBottom={150}>
                                 <CardBody padding={0}>
-                                    <Image loading="lazy" src={data.imageSrc}/>
+                                    <Image loading="lazy" src={data.imageSrc} alt={data.alt}/>
                                 </CardBody>
                                 <CardFooter flexDirection={{ base: "column", md: "row" }} padding={"45px 25px 45px 15px"} justifyContent="space-between">
                                     <Box>

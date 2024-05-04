@@ -14,10 +14,6 @@
     font-weight: 500 !important;
 }
 
-.tab-all-div1 {
-    width: 530px;
-}
-
 .tab-all-div1, .tab-all-div2, .tab-all-div3, .tab-all-div4, .tab-all-div5 {
     position: relative;
 }
@@ -29,9 +25,8 @@
 }
 
 .grid-tab-all-image-1 {
-    width: 100%;
+    width: 120%;
     height: 100%;
-    object-fit: cover;
 }
 
 .grid-tab-all-image-1, .grid-tab-all-image-g {
