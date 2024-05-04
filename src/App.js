@@ -8,12 +8,12 @@ import '@fontsource/inter/500.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFound from './components/notFound';
 import Home from './components/routes/home';
-import About from './components/routes/default_about';
-import MobileAbout from './components/routes/mobile_about';
+import About from './components/routes/about__desktop';
+import MobileAbout from './components/routes/about__mobile';
 import Work from './components/routes/work';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
-import WorkGDesign from './components/routes/sub-routes/WorkGDesign';
+import WorkGDesign from './components/routes/__work-design';
 
 function App() {
   const [isMobile] = useMediaQuery('(max-width: 767px)');

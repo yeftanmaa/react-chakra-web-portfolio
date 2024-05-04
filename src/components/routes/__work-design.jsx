@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Container, Grid, GridItem, Image, Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import '../../styles/workgdesign.css';
+import '../styles/workgdesign.css';
 import TypewriterComponent from "typewriter-effect";
 
 const WorkGDesign = () => {
