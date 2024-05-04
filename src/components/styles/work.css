@@ -27,6 +27,8 @@
 
 .work-clients-image {
     width: 150px;
+    display: flex;
+    justify-content: center;
 }
 
 .work-portfolio-details-wrapper {
@@ -43,9 +45,12 @@
 }
 
 /* Mobile devices */
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 880px) {
     .work-clients-wrapper {
-        align-items: center !important;
+        display: flex;
+        gap: 50px;
+        flex-direction: column !important;
+        align-items: center;
     }
 
     .work-portfolio-details-wrapper {

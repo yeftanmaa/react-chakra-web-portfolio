@@ -12,10 +12,14 @@ const Work = () => {
     const animationVariants = {
         hidden: { opacity: 0, scale: 0.8, y: 100 },
         visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: { type: 'spring', stiffness: 300, damping: 20 },
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: {
+                type: 'spring',
+                stiffness: 300,
+                damping: 20
+            },
         },
     };
 
@@ -42,7 +46,7 @@ const Work = () => {
                     </Text>
                 </Box>
 
-                <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 2, md: 8 }} className="work-clients-wrapper">
+                <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 2, md: 0 }} className="work-clients-wrapper">
 
                     {clientData.map((data, key) => {
                         return (
@@ -50,8 +54,19 @@ const Work = () => {
                                 key={key}
                                 initial="hidden"
                                 animate="visible"
-                                variants={animationVariants}
-                                transition={{ duration: data.duration }}
+                                variants={{
+                                    ...animationVariants,
+                                    visible: {
+                                        ...animationVariants.visible,
+                                        // Set the opacity transition duration dynamically
+                                        transition: {
+                                            ...animationVariants.visible.transition,
+                                            opacity: {
+                                                duration: data.duration, // Use the duration from clientData
+                                            },
+                                        },
+                                    },
+                                }}
                             >
                                 <Box className="work-clients-image">
                                     <Image loading="lazy" src={data.imageSrc} objectFit="cover" alt={data.alt} />
