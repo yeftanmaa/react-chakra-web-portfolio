@@ -25,9 +25,12 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <div className="App">
-        <video autoPlay muted loop id='bg-motion'>
-          <source src={motionData.imageSrc} type='video/mp4'></source>
-        </video>
+        {!isApiRoute && (
+          <video autoPlay muted loop id='bg-motion'>
+            <source src={motionData.imageSrc} type='video/mp4'></source>
+          </video>
+        )}
+
         <Router>
           {!isApiRoute && <Navbar />} {/* Only render Navbar if it's not an API route */}
           
