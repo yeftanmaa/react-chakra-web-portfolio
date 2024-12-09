@@ -45,8 +45,8 @@ const ContactForm = () => {
                 message: formData.body
             };
 
-            await emailjs.send(process.env.REACT_APP_EMAIL_SERVICES_KEY, process.env.REACT_APP_EMAIL_TEMPLATE_NAME, templateParams, process.env.REACT_APP_EMAIL_PUBLIC_KEY);
-            showAlert("success", "Yay, Email sent successfully!");
+            // await emailjs.send(process.env.REACT_APP_EMAIL_SERVICES_KEY, process.env.REACT_APP_EMAIL_TEMPLATE_NAME, templateParams, process.env.REACT_APP_EMAIL_PUBLIC_KEY);
+            // showAlert("success", "Yay, Email sent successfully!");
 
             const response = await fetch("/api/contact", {
                 method: "POST",
