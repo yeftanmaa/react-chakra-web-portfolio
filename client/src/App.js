@@ -29,8 +29,7 @@ function App() {
           <source src={motionData.imageSrc} type='video/mp4'></source>
         </video>
         <Router>
-        {!isApiRoute && <Navbar />} {/* Only render Navbar if it's not an API route */}
-          <Navbar />
+          {!isApiRoute && <Navbar />} {/* Only render Navbar if it's not an API route */}
           
           <Routes>
             {/* <Route path="*" element={<NotFound />} /> */}
