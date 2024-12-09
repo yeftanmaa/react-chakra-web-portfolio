@@ -19,6 +19,7 @@ import WorkGDesign from './components/routes/__work-design';
 import Fun from './components/routes/tech-tools';
 
 function App() {
+  const isApiRoute = window.location.pathname.startsWith('/api/');
   const [isMobile] = useMediaQuery('(max-width: 767px)');
 
   return (
@@ -28,6 +29,7 @@ function App() {
           <source src={motionData.imageSrc} type='video/mp4'></source>
         </video>
         <Router>
+        {!isApiRoute && <Navbar />} {/* Only render Navbar if it's not an API route */}
           <Navbar />
           
           <Routes>
@@ -40,7 +42,7 @@ function App() {
             <Route exact path="/fun" element={<Fun />} />
           </Routes>
 
-          <Footer />
+          {!isApiRoute && <Footer />} {/* Only render Footer if it's not an API route */}
         </Router>
       </div>
     </ChakraProvider>
