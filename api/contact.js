@@ -1,7 +1,6 @@
-require('dotenv').config();
 const nodemailer = require('nodemailer');
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
     if (req.method !== 'POST') {
         return res.status(405).json({ status: 'KO', message: 'Method not allowed' });
     }
@@ -10,10 +9,10 @@ module.exports = async (req, res) => {
 
     // Set up Nodemailer transport for Gmail
     const transporter = nodemailer.createTransport({
-        service: 'gmail', // Use Gmail's service
+        service: 'gmail',
         auth: {
             user: process.env.MAIL_USER,
-            pass: process.env.MAIL_PASS 
+            pass: process.env.MAIL_PASS
         },
     });
 
