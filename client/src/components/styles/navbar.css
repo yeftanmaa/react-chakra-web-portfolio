@@ -1,0 +1,99 @@
+.navbar-global-container {
+    padding: 60px 0;
+}
+
+.navbar-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.navbar-links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.navbar-button-contact {
+    background-color: transparent !important;
+    font-size: 19px !important;
+    font-weight: 400 !important;
+    padding: 0 !important;
+}
+
+.navbar-form-layout {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.navbar-form-label {
+    width: 60px;
+    font-size: 22px !important;
+    font-weight: 400 !important;
+}
+
+.navbar-form-emailTo {
+    font-size: 22px !important;
+    font-weight: 400 !important;
+    padding: 15px 25px;
+    border-radius: 40px;
+    background-color: #F7F7F7;
+}
+
+.navbar-form-emailFrom {
+    font-size: 22px !important;
+    font-weight: 400 !important;
+    border: none !important;
+    border-radius: 40px;
+    background-color: #F7F7F7;
+}
+
+.navbar-form-body {
+    margin: 20px 0;
+    font-size: 22px !important;
+    font-weight: 400 !important;
+    padding: 0 !important;
+}
+
+.navbar-form-body::placeholder, .navbar-form-emailFrom::placeholder {
+    color: #9B9B9B;
+}
+
+.navbar-form-title {
+    font-size: 43px;
+}
+
+.navbar-form-submit-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: -20 !important;
+}
+
+.modal-close-button {
+    border: 2px solid black;
+    padding: 25px;
+    border-radius: 80px !important;
+    margin: 20px 20px 0 0;
+}
+
+.navbar-form-submit {
+    font-weight: 400 !important;
+    font-size: 22px !important;
+    padding: 30px 35px !important;
+    border-radius: none !important;
+}
+
+.close-icon {
+    padding: 14px;
+    border-radius: 30px;
+    border: 2px solid black;
+    margin: 20px 0;
+}
