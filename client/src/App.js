@@ -31,7 +31,7 @@ function App() {
           <Navbar />
           
           <Routes>
-            <Route path="*" element={<NotFound />} />
+            {/* <Route path="*" element={<NotFound />} /> */}
             <Route exact path="/" element={<Home />} />
             <Route exact path="/about" element={isMobile ? <MobileAbout /> : <About />} />
             <Route exact path="/work" element={<Work />} />
