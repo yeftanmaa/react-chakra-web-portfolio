@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Divider, FormControl, FormLabel, Input, ModalCloseButton, Textarea, Button, Modal, ModalBody, ModalContent, ModalOverlay, useDisclosure, useColorMode } from '@chakra-ui/react';
 import "../styles/navbar.css";
 import "../styles/contact-form.css";
-import emailjs from 'emailjs-com';
+// import emailjs from 'emailjs-com';
 import AlertInfo from "./alert";
 
 const ContactForm = () => {
@@ -48,7 +48,7 @@ const ContactForm = () => {
             // await emailjs.send(process.env.REACT_APP_EMAIL_SERVICES_KEY, process.env.REACT_APP_EMAIL_TEMPLATE_NAME, templateParams, process.env.REACT_APP_EMAIL_PUBLIC_KEY);
             // showAlert("success", "Yay, Email sent successfully!");
 
-            const response = await fetch("/api/contact", {
+            const response = await fetch("https://nathstudio.vercel.app/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
