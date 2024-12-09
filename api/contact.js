@@ -1,9 +1,10 @@
 const nodemailer = require('nodemailer');
 
 export default async (req, res) => {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ status: 'KO', message: 'Method not allowed' });
-    }
+    res.send("Hello World");
+    // if (req.method !== 'POST') {
+    //     return res.status(405).json({ status: 'KO', message: 'Method not allowed' });
+    // }
 
     const { to_email, user_email, message } = req.body;
 
