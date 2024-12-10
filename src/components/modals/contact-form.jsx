@@ -48,7 +48,7 @@ const ContactForm = () => {
             // await emailjs.send(process.env.REACT_APP_EMAIL_SERVICES_KEY, process.env.REACT_APP_EMAIL_TEMPLATE_NAME, templateParams, process.env.REACT_APP_EMAIL_PUBLIC_KEY);
             // showAlert("success", "Yay, Email sent successfully!");
 
-            const response = await fetch("/api/contact", {
+            const response = await fetch("https://nathstudio-api.vercel.app/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -58,7 +58,7 @@ const ContactForm = () => {
 
             const data = await response.json();
 
-            if (response.ok) {
+            if (response.ok && data.status === "OK") {
                 showAlert("success", "Yay, Email sent successfully!");
 
                 // Reset form data and close the modal after sending the email
