@@ -19,23 +19,21 @@ import WorkGDesign from './components/routes/__work-design';
 import Fun from './components/routes/tech-tools';
 
 function App() {
-  const isApiRoute = window.location.pathname.startsWith('/api/');
   const [isMobile] = useMediaQuery('(max-width: 767px)');
 
   return (
     <ChakraProvider theme={theme}>
       <div className="App">
-        {!isApiRoute && (
-          <video autoPlay muted loop id='bg-motion'>
-            <source src={motionData.imageSrc} type='video/mp4'></source>
-          </video>
-        )}
+        
+        <video autoPlay muted loop id='bg-motion'>
+          <source src={motionData.imageSrc} type='video/mp4'></source>
+        </video>
 
         <Router>
-          {!isApiRoute && <Navbar />} {/* Only render Navbar if it's not an API route */}
+          <Navbar />
           
           <Routes>
-            {/* <Route path="*" element={<NotFound />} /> */}
+            <Route path="*" element={<NotFound />} />
             <Route exact path="/" element={<Home />} />
             <Route exact path="/about" element={isMobile ? <MobileAbout /> : <About />} />
             <Route exact path="/work" element={<Work />} />
@@ -44,7 +42,8 @@ function App() {
             <Route exact path="/fun" element={<Fun />} />
           </Routes>
 
-          {!isApiRoute && <Footer />} {/* Only render Footer if it's not an API route */}
+          <Footer />
+          
         </Router>
       </div>
     </ChakraProvider>
