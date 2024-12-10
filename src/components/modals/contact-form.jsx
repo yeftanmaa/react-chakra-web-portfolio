@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import { Box, Divider, FormControl, FormLabel, Input, ModalCloseButton, Textarea, Button, Modal, ModalBody, ModalContent, ModalOverlay, useDisclosure, useColorMode } from '@chakra-ui/react';
 import "../styles/navbar.css";
 import "../styles/contact-form.css";
-// import emailjs from 'emailjs-com';
 import AlertInfo from "./alert";
 
 const ContactForm = () => {
-    // const { REACT_APP_EMAIL_SERVICES_KEY, REACT_APP_EMAIL_TEMPLATE_NAME, REACT_APP_EMAIL_PUBLIC_KEY} = process.env;
-    
     const { colorMode } = useColorMode();
-    const [alert, setAlert] = useState(null); // State for the alert
+    const [alert, setAlert] = useState(null);
 
     // Check if the current color mode is dark or light
     const toColor = colorMode === "dark" ? "white" : "black";
@@ -29,7 +26,7 @@ const ContactForm = () => {
         setAlert(<AlertInfo status={status} info={info} />);
 
         setTimeout(() => {
-            setAlert(null); // Remove the alert
+            setAlert(null);
         }, 3000);
     }
 
@@ -44,9 +41,6 @@ const ContactForm = () => {
                 user_email: formData.from,
                 message: formData.body
             };
-
-            // await emailjs.send(process.env.REACT_APP_EMAIL_SERVICES_KEY, process.env.REACT_APP_EMAIL_TEMPLATE_NAME, templateParams, process.env.REACT_APP_EMAIL_PUBLIC_KEY);
-            // showAlert("success", "Yay, Email sent successfully!");
 
             const response = await fetch("https://nathstudio-api.vercel.app/api/contact", {
                 method: "POST",
