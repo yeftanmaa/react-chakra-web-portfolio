@@ -1,5 +1,3 @@
-import { motionData } from './json/motionData';
-
 import './App.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import { useMediaQuery } from '@chakra-ui/react';
@@ -16,7 +14,7 @@ import Work from './components/routes/work';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import WorkGDesign from './components/routes/__work-design';
-import Fun from './components/routes/tech-tools';
+import TechTools from './components/routes/tech-tools';
 
 function App() {
   const [isMobile] = useMediaQuery('(max-width: 767px)');
@@ -24,11 +22,6 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <div className="App">
-        
-        <video autoPlay muted loop id='bg-motion'>
-          <source src={motionData.imageSrc} type='video/mp4'></source>
-        </video>
-
         <Router>
           <Navbar />
           
@@ -39,7 +32,7 @@ function App() {
             <Route exact path="/work" element={<Work />} />
             <Route exact path="/mobile-about" element={<MobileAbout />} />
             <Route exact path="/work/graphic-design" element={<WorkGDesign />} />
-            <Route exact path="/fun" element={<Fun />} />
+            <Route exact path="/tech-tools" element={<TechTools />} />
           </Routes>
 
           <Footer />

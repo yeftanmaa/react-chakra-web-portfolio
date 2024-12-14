@@ -10,7 +10,7 @@ const Navbar = () => {
             <Container className="navbar-global-container animate__animated animate__fadeIn" maxW={"7xl"}>
                 <Stack direction={{ base: "column", md: "row" }} spacing={{ base: 0, md: 8 }}>
                     <Box className="navbar-logo-wrapper">
-                        <a href='/'><Img src={process.env.PUBLIC_URL + '/images/logo-black.png'} w={10} /></a>
+                        <a href='/'><Img src={process.env.PUBLIC_URL + '/images/logo-white.png'} w={10} /></a>
                     </Box>
 
                     <Spacer />

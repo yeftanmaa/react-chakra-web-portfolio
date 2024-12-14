@@ -44,6 +44,24 @@
     font-weight: 400;
 }
 
+.discover-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.discover-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #000;
+    transition: width .3s;
+}
+
+.discover-link:hover::after {
+    width: 100%;
+}
+
 /* Mobile devices */
 @media screen and (min-width: 320px) and (max-width: 880px) {
     .work-clients-wrapper {

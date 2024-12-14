@@ -2,19 +2,20 @@ import React from "react";
 import { Box, Container, Text, Grid, Divider } from "@chakra-ui/react";
 import '../styles/tech-tools.css';
 
-const Fun = () => {
+const TechTools = () => {
     return (
         <div>
             <Container className="tech-tools-global-container" maxW={"7xl"}>
                 <Box>
-                    <Text className="title-wrapper animate__animated animate__fadeInUp animate__faster" mb={5} minW={'auto'}>
+                    <Text color="white" className="title-wrapper animate__animated animate__fadeInUp animate__faster" mb={5} minW={'auto'}>
                     Main Skills
                     </Text>
 
                     <Grid
                         templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
                         gap={6}
-                        textColor="gray.600"
+                        textColor="white"
+                        opacity="0.6"
                         fontFamily="'IBM Plex Mono', monospace"
                     >
                         {/* Column 1 */}
@@ -38,14 +39,15 @@ const Fun = () => {
 
                     <Divider my={10} borderColor="gray.600" opacity={0.2} borderWidth={1} />
 
-                    <Text className="title-wrapper animate__animated animate__fadeInUp animate__faster" mb={5} minW={'auto'}>
+                    <Text color="white" className="title-wrapper animate__animated animate__fadeInUp animate__faster" mb={5} minW={'auto'}>
                     Tools/<span style={{ fontSize: '30px' }}>years</span>
                     </Text>
 
                     <Grid
                         templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
                         gap={6}
-                        textColor="gray.600"
+                        textColor="white"
+                        opacity="0.6"
                         fontFamily="'IBM Plex Mono', monospace"
                     >
                         {/* Column 1 */}
@@ -76,17 +78,10 @@ const Fun = () => {
                             <Text mb={2}>Adobe XD/+2</Text>
                         </Box>
                     </Grid>
-
-                    <Divider my={10} borderColor="gray.600" opacity={0.2} borderWidth={1} />
-
-                    <Text className="title-wrapper animate__animated animate__fadeInUp animate__faster" mb={5} minW={'auto'}>
-                    Languages
-                    </Text>
-
                 </Box>
             </Container>
         </div>
     );
 }
  
-export default Fun;
+export default TechTools;

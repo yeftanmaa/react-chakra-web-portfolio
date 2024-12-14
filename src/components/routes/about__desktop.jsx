@@ -8,13 +8,13 @@ const About = () => {
     const { colorMode } = useColorMode();
 
     // Check if the current color mode is dark or light
-    const toColor = colorMode === "dark" ? "white" : "black";
+    const toColor = colorMode === "dark" ? "white" : "white";
 
     return (
         <div>
             <Container className="about-global-container" maxW={"7xl"}>
                 <Box maxW={900}>
-                    <Text className="about-title-text animate__animated animate__fadeInUp animate__fast">
+                    <Text color="white" className="about-title-text animate__animated animate__fadeInUp animate__fast">
                         Currently hustling and brainstorming at a Spain-based digital marketing company.
                     </Text>
                 </Box>
@@ -27,7 +27,7 @@ const About = () => {
 
                 <AnimationOnScroll initiallyVisible={false} animateOnce={true} animatePreScroll={false} animateIn="animate__fadeInUp">
                     <Box className="about-title-wrapper" maxW={750}>
-                        <Text className="about-title-text">
+                        <Text color="white" className="about-title-text">
                             I enjoy finding creative ways to streamline my belongings and keep my workspace tidy and functional.
                         </Text>
                     </Box>
@@ -41,9 +41,9 @@ const About = () => {
                                     {aboutTableData.map((data, key) => {
                                         return (
                                             <Tr key={key} borderTop={`2px solid ${toColor}`} className="table-first-row">
-                                                <Td padding={"50px 0"} borderBottom={`2px solid ${toColor}`}>{data.year}</Td>
-                                                <Td fontWeight={500} borderBottom={`2px solid ${toColor}`}>{data.company}</Td>
-                                                <Td borderBottom={`2px solid ${toColor}`}>{data.role}</Td>
+                                                <Td color="white" padding={"50px 0"} borderBottom={`2px solid ${toColor}`}>{data.year}</Td>
+                                                <Td color="white" fontWeight={500} borderBottom={`2px solid ${toColor}`}>{data.company}</Td>
+                                                <Td color="white" borderBottom={`2px solid ${toColor}`}>{data.role}</Td>
                                             </Tr>
                                         )
                                     })}
@@ -55,7 +55,7 @@ const About = () => {
 
                 <AnimationOnScroll initiallyVisible={false} animateOnce={true} animatePreScroll={false} animateIn="animate__fadeInUp">
                     <Box className="about-education-wrapper" maxW={750}>
-                        <Text className="about-title-text">
+                        <Text color="white" className="about-title-text">
                             Pursued a Bachelor's degree in Computer Science, with a graduation date set on 2023.
                         </Text>
                     </Box>

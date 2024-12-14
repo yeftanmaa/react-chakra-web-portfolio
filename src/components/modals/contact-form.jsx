@@ -9,7 +9,7 @@ const ContactForm = () => {
     const [alert, setAlert] = useState(null);
 
     // Check if the current color mode is dark or light
-    const toColor = colorMode === "dark" ? "white" : "black";
+    const toColor = colorMode === "dark" ? "white" : "white";
 
     const [loading, setLoading] = useState(false);
     const {isOpen, onOpen, onClose} = useDisclosure();
@@ -30,55 +30,78 @@ const ContactForm = () => {
         }, 3000);
     }
 
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    const isFormValid = () => {
+        if (!formData.from || !formData.body) {
+            showAlert("error", "Please fill in your email and message!");
+            return false;
+        }
+        if (!validateEmail(formData.from)) {
+            showAlert("error", "Your email address seems not valid");
+            return false;
+        }
+        return true;
+    };
+
+    const sendEmailRequest = () => {
+        const templateParams = {
+            to_email: formData.to,
+            user_email: formData.from,
+            message: formData.body
+        };
+    
+        return fetch("https://nathstudio-api.vercel.app/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(templateParams)
+        });
+    };
+
+    const handleSuccess = () => {
+        showAlert("success", "Yay, Email sent successfully!");
+    
+        // Reset form data and close the modal
+        setFormData({
+            to: "johanesyefta012@gmail.com",
+            from: "",
+            subject: emailSubject,
+            body: ""
+        });
+    
+        onClose();
+    };
+
     const sendEmail = async (event) => {
         event.preventDefault();
-
         setLoading(true);
-
+    
         try {
-            const templateParams = {
-                to_email: formData.to,
-                user_email: formData.from,
-                message: formData.body
-            };
-
-            const response = await fetch("https://nathstudio-api.vercel.app/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(templateParams)
-            });
-
-            const data = await response.json();
-
-            if (response.ok && data.status === "OK") {
-                showAlert("success", "Yay, Email sent successfully!");
-
-                // Reset form data and close the modal after sending the email
-                setFormData({
-                    to: "johanesyefta012@gmail.com",
-                    from: "",
-                    subject: emailSubject,
-                    body: ""
-                });
-
-                onClose();
+            if (!isFormValid()) return;
+    
+            const response = await sendEmailRequest();
+    
+            if (response.ok) {
+                handleSuccess();
             } else {
-                throw new Error(data.message || "An error occured while sending your email");
+                const data = await response.json();
+                throw new Error(data.message || "An error occurred while sending your email");
             }
-
-
-        } catch (err) {
-            showAlert("error", err.message || "An error occurred while trying to send your email");
+        } catch (error) {
+            showAlert("error", error.message || "An error occurred while trying to send your email");
         } finally {
             setLoading(false);
         }
-    }
+    };
 
     return (
         <>
-            <Button className="navbar-button-contact" onClick={onOpen}>Contact</Button>
+            <Button color="white" className="navbar-button-contact" onClick={onOpen}>Contact</Button>
 
             <Modal isOpen={isOpen} onClose={onClose} isCentered blockScrollOnMount={true}>
                 <ModalOverlay />
@@ -128,8 +151,8 @@ const ContactForm = () => {
                                 <Button
                                     className="navbar-form-submit"
                                     type="submit"
-                                    backgroundColor={toColor}
-                                    color={colorMode === "dark" ? "black" : "white"}
+                                    backgroundColor="black"
+                                    color="white"
                                     _hover={{ backgroundColor: colorMode === "dark" ? "#e8e8e8" : "#222222", cursor: "pointer" }}
                                     isLoading={loading}
                                     loadingText="Sending..."
@@ -138,21 +161,15 @@ const ContactForm = () => {
                                     Send
                                 </Button>
                             </Box>
+
+                            {/* Alert dialogue */}
+                            <Box className="alert-form-submit-wrapper">
+                                {alert}
+                            </Box>
                         </FormControl>
                     </ModalBody>
                 </ModalContent>
             </Modal>
-
-            <div
-                style={{
-                    position: "fixed",
-                    bottom: "20px",
-                    left: "20px", 
-                    zIndex: "9999"
-                }}
-            >
-                {alert}
-            </div>
         </>
     );
 }

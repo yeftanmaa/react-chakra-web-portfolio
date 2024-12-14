@@ -8,13 +8,13 @@ const MobileAbout = () => {
     const { colorMode } = useColorMode();
 
     // Check if the current color mode is dark or light
-    const toColor = colorMode === "dark" ? "white" : "black";
+    const toColor = colorMode === "dark" ? "white" : "white";
 
     return (
         <div>
             <Container className="about-global-container" maxW={"7xl"}>
                 <Box maxW={900}>
-                    <Text className="about-title-text animate__animated animate__fadeInUp animate__fast">
+                    <Text color="white" className="about-title-text animate__animated animate__fadeInUp animate__fast">
                         Currently hustling and brainstorming at a Spain-based digital marketing company.
                     </Text>
                 </Box>
@@ -27,7 +27,7 @@ const MobileAbout = () => {
 
                 <AnimationOnScroll initiallyVisible={false} animateOnce={true} animatePreScroll={false} animateIn="animate__fadeInUp">
                     <Box className="about-title-wrapper" maxW={750}>
-                        <Text className="about-title-text">
+                        <Text color="white" className="about-title-text">
                             I enjoy finding creative ways to streamline my belongings and keep my workspace tidy and functional.
                         </Text>
                     </Box>
@@ -44,9 +44,9 @@ const MobileAbout = () => {
                                 />
 
                                 <Box marginY={25} fontSize={23} lineHeight={2}>
-                                    <Text>{data.year}</Text>
-                                    <Text fontWeight={500}>{data.company}</Text>
-                                    <Text>{data.role}</Text>
+                                    <Text color="white">{data.year}</Text>
+                                    <Text color="white" fontWeight={500}>{data.company}</Text>
+                                    <Text color="white">{data.role}</Text>
                                 </Box>
                                 
                             </Box>
@@ -63,7 +63,7 @@ const MobileAbout = () => {
 
                 <AnimationOnScroll initiallyVisible={false} animateOnce={true} animatePreScroll={false} animateIn="animate__fadeInUp">
                     <Box className="about-education-wrapper" maxW={750}>
-                        <Text className="about-title-text">
+                        <Text color="white" className="about-title-text">
                             Pursued a Bachelor's degree in Computer Science, with a graduation date set on 2023.
                         </Text>
                     </Box>
