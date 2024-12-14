@@ -35,7 +35,7 @@ const Work = () => {
         <div>
             <Container className="work-global-container" maxW={"7xl"}>
                 <Box className="animate__animated animate__fadeInUp animate__fast">
-                    <Text className="work-title-wrapper" maxW={820}>
+                    <Text color="white" className="work-title-wrapper" maxW={820}>
                     My experience over past years reached from mobility of
                     
                     <Text display="inline" bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'> digital marketing</Text>,
@@ -118,8 +118,8 @@ const Work = () => {
                 
                 <AnimationOnScroll initiallyVisible={false} animateOnce={true} animatePreScroll={false} animateIn="animate__fadeInUp">
                     <Box className="work-footer-local-container">
-                        <Text className="work-footer-wrapper" maxW={720}>
-                            <mark>Discover</mark> the <Text display={"inline"} bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'>powerful tools</Text> and <Text display="inline" bgGradient='linear(to-r, red.500, yellow.500)' bgClip="text">cutting-edge technologies</Text> I've been using as a developer.
+                        <Text color="white" className="work-footer-wrapper" maxW={720}>
+                            <a href="/tech-tools"><mark className="discover-link">Discover</mark></a> the <Text display={"inline"} bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'>powerful tools</Text> and <Text display="inline" bgGradient='linear(to-r, red.500, yellow.500)' bgClip="text">cutting-edge technologies</Text> I've been using as a developer.
                         </Text>
                     </Box>    
                 </AnimationOnScroll>

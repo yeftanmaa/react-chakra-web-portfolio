@@ -28,7 +28,7 @@ const Footer = () => {
     }, 300);
 
     // Check if the current color mode is dark or light
-    const toColor = colorMode === "dark" ? "white" : "black";
+    const toColor = colorMode === "dark" ? "white" : "white";
 
     return (
         <div>
@@ -67,12 +67,7 @@ const Footer = () => {
                         <Spacer />
 
                         <Box className="footer-copyright-wrapper">
-                            <Box display="flex" gap={2}>
-                                {/* <Image src="/icons/light-mode-icon.svg" />
-                                <Switch isChecked={colorMode === "dark"} onChange={toggleColorMode} size="lg" />
-                                <Image src="/icons/dark-mode-icon.svg" /> */}
-                            </Box>
-                            <Text>© Copyright {currentYear}</Text>
+                            <Text color="white">© Copyright {currentYear}</Text>
                         </Box>
                     </Stack>
                 </Container>

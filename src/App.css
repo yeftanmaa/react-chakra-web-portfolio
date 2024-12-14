@@ -1,5 +1,6 @@
 body {
   cursor: url('../public/images/cursor.png'), auto;
+  background-color: #13121f !important;
 }
 
 a:hover {
