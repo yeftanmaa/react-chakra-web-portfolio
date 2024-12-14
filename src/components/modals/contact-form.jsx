@@ -104,7 +104,7 @@ const ContactForm = () => {
 
     return (
         <>
-            <Button className="navbar-button-contact" onClick={onOpen}>Contact</Button>
+            <Button color="white" className="navbar-button-contact" onClick={onOpen}>Contact</Button>
 
             <Modal isOpen={isOpen} onClose={onClose} isCentered blockScrollOnMount={true}>
                 <ModalOverlay />
