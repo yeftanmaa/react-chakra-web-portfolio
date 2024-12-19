@@ -19,5 +19,12 @@ export const workExpData = [
         date: "Jan 2023 – Apr 2023",
         platform: "Web",
         alt: "Familist Project"
+    },
+    {
+        imageSrc: "/images/portfolio_uni-connect.jpg",
+        title: "University Connect",
+        date: "Nov 2024 - Dec 2024",
+        platform: "Web",
+        alt: "Uni Connect Website"
     }
 ]
