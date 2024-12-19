@@ -30,7 +30,7 @@ const WorkGDesign = () => {
         <div>
             <Container className="workgdesign-global-container" maxW={"7xl"}>
 
-            <Box className="workgdesign-title-wrapper">
+            <Box color="white" className="workgdesign-title-wrapper">
                 <TypewriterComponent
                     options={{
                         strings: 'Delight on my <b>most-popular </b>design over past few years.',
@@ -50,10 +50,10 @@ const WorkGDesign = () => {
                     alignItems="center"
                     flexWrap={"wrap"}
                 >
-                    <Tab className="tab-header">All</Tab>
-                    <Tab className="tab-header">Business & Branding</Tab>
-                    <Tab className="tab-header">Streetwear</Tab>
-                    <Tab className="tab-header">3D Design</Tab>
+                    <Tab className="tab-header" color="white">All</Tab>
+                    <Tab className="tab-header" color="white">Business & Branding</Tab>
+                    <Tab className="tab-header" color="white">Streetwear</Tab>
+                    <Tab className="tab-header" color="white">3D Design</Tab>
                 </TabList>
 
                 <TabPanels>
