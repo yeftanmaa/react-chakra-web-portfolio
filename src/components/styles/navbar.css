@@ -16,13 +16,13 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
-    font-size: 19px;
+    font-size: 23px;
     font-weight: 400;
 }
 
 .navbar-button-contact {
     background-color: transparent !important;
-    font-size: 19px !important;
+    font-size: 23px !important;
     font-weight: 400 !important;
     padding: 0 !important;
 }
