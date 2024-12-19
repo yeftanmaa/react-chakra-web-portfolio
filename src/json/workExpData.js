@@ -21,6 +21,13 @@ export const workExpData = [
         alt: "Familist Project"
     },
     {
+        imageSrc: "/images/portfolio_kas-report-kyou.jpg",
+        title: "Kyou Cash Report",
+        date: "Oct 2024 - Nov 2024",
+        platform: "Web App",
+        alt: "Cash Report Web Application"
+    },
+    {
         imageSrc: "/images/portfolio_uni-connect.jpg",
         title: "University Connect",
         date: "Nov 2024 - Dec 2024",
