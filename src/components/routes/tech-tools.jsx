@@ -12,6 +12,7 @@ const TechTools = () => {
                     </Text>
 
                     <Grid
+                        className="animate__animated animate__fadeIn animate__slow"
                         templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
                         gap={6}
                         textColor="white"
@@ -20,8 +21,8 @@ const TechTools = () => {
                     >
                         {/* Column 1 */}
                         <Box fontSize={18}>
-                            <Text mb={5}>Frontend development,</Text>
-                            <Text mb={5}>UI/UX Design,</Text>
+                            <Text mb={5}>Frontend development</Text>
+                            <Text mb={5}>UI/UX Design</Text>
                             <Text mb={5}>JavaScript, HTML, CSS, jQuery</Text>
                         </Box>
 
@@ -44,6 +45,7 @@ const TechTools = () => {
                     </Text>
 
                     <Grid
+                        className="animate__animated animate__fadeIn animate__slow"
                         templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
                         gap={6}
                         textColor="white"
