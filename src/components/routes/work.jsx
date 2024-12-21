@@ -1,10 +1,9 @@
-import React from "react";
-import { Container, Box, Text, Image, Card, CardBody, CardFooter, Heading, IconButton, Stack } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Container, Box, Text, Image, Heading, Stack, Tag, TagLabel, Link, Flex } from "@chakra-ui/react";
 import '../styles/work.css';
+import { BsArrowUpShort } from 'react-icons/bs';
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { motion } from "framer-motion";
-import { BsArrowRightCircle } from 'react-icons/bs';
 import { workExpData } from "../../json/workExpData";
 import { clientData } from "../../json/clientData";
 
@@ -23,13 +22,27 @@ const Work = () => {
         },
     };
 
-    // Function: Redirect user to specific work page
-    const navigate = useNavigate();
-    const redirectTo = (path) => {
-        if (path === 'gDesign') {
-            navigate(`/work/graphic-design`);
+    const redirectBasedOnTitle = (title, live, github) => {
+        if (live === "" && github === "") {
+            return "abc"; 
+        }
+    
+        if (title.toLowerCase().includes('branding')) {
+            return '/work/graphic-design';
+        } else {
+            return live === "" ? github : live;
         }
     };
+
+    const getTarget = (title, live, github) => {
+        if (title.toLowerCase().includes('branding')) {
+            return "_self";
+        }
+        return live !== "" || github !== "" ? "_blank" : "_self";
+    };
+       
+
+    const [hoveredIndex, setHoveredIndex] = useState(null);
 
     return (
         <div>
@@ -79,39 +92,76 @@ const Work = () => {
                 {workExpData.map((data, key) => {
                     return (
                         <AnimationOnScroll initiallyVisible={false} animateOnce={true} animatePreScroll={false} animateIn="animate__fadeIn" offset={300}>
-                            <Card key={key} boxShadow="none" marginBottom={150}>
-                                <CardBody padding={0}>
-                                    <Image loading="lazy" src={data.imageSrc} alt={data.alt}/>
-                                </CardBody>
-                                <CardFooter flexDirection={{ base: "column", md: "row" }} padding={"45px 25px 45px 15px"} justifyContent="space-between">
-                                    <Box>
-                                        <Heading as="h1" fontWeight={400}>{data.title}</Heading>
+                                <Link
+                                    className={`project-item-link ${hoveredIndex !== null && hoveredIndex !== key ? 'hovered' : ''}`}
+                                    display="flex"
+                                    flexDirection={["column", "column", "row"]}
+                                    gap={8}
+                                    mx={4}
+                                    href={redirectBasedOnTitle(data.title, data.live, data.github)}
+                                    target={getTarget(data.title, data.live, data.github)}
+                                    onMouseEnter={() => setHoveredIndex(key)}
+                                    onMouseLeave={() => setHoveredIndex(null)}
+                                >
+                                    <Box cursor="pointer">
+                                        <Image 
+                                            loading="lazy" 
+                                            src={data.imageSrc} 
+                                            alt={data.alt} 
+                                            maxW={["auto", "auto", "350px"]} 
+                                            borderRadius="xl"
+                                        />
                                     </Box>
 
-                                    <Box justifyContent={{ base: "space-between", md: "flex-start"}} className="work-portfolio-details-wrapper">
-                                        <Box>
-                                            <Text className="work-portfolio-text-details">{data.date}</Text>
-                                            <Text className="work-portfolio-text-details">{data.platform}</Text>
-                                        </Box>
-                                        <Box>
-                                            <IconButton
-                                                icon={<BsArrowRightCircle size={45}/>}
-                                                variant="outline"
-                                                border={0}
-                                                onClick={() => {
-                                                    if (data.title === 'Business – Branding & Images') {
-                                                        redirectTo('gDesign');
-                                                    } else if (data.title === 'Sagara Foundation Project') {
-                                                        redirectTo('sagaraProject');
-                                                    } else if (data.title === 'Familist Project') {
-                                                        redirectTo('familistProject');
-                                                    }
-                                                }}
+                                    <Box>
+                                        <Flex align="center">
+                                            <Heading
+                                                className="work-heading"
+                                                color="white"
+                                                as="h2"
+                                                fontWeight={400}
+                                                fontSize={["lg", "30px"]}
+                                                mb={2}
+                                            >
+                                                {data.title}
+                                            </Heading>
+                                            
+                                            <BsArrowUpShort
+                                                className="icon-work"
+                                                fontSize={42}
+                                                color="white"
                                             />
+                                        </Flex>
+                                        <Text 
+                                            color="whiteAlpha.700" 
+                                            className="work-description" 
+                                            fontSize={["sm", "md"]}
+                                        >
+                                            {data.description}
+                                        </Text>
+
+                                        <Box mt={5}>
+                                            {data.tags.map((tagName, index) => {
+                                                return (
+                                                    <Tag
+                                                        key={index}
+                                                        className="tag-color"
+                                                        size="lg"
+                                                        variant="solid"
+                                                        borderRadius="full"
+                                                        fontSize={16}
+                                                        px={5}
+                                                        py={2}
+                                                        mr={4}
+                                                        mb={4}
+                                                    >
+                                                        <TagLabel color="#ABFFD9" fontWeight={300}>{tagName}</TagLabel>
+                                                    </Tag>
+                                                )
+                                            })}
                                         </Box>
                                     </Box>
-                                </CardFooter>
-                            </Card>
+                                </Link>
                         </AnimationOnScroll>
                     )
                 })}

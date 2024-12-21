@@ -8,7 +8,46 @@
     font-weight: 300;
 }
 
+.project-item-link {
+    border: 1px solid transparent; /* Set a transparent border */
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    padding: 15px;
+    text-decoration: none !important;
+}
+
+.project-item-link.hovered {
+    opacity: 0.5;
+}
+
+.project-item-link:hover {
+    background-color: rgba(255, 255, 255, 0.095) !important;
+    border: 1px solid rgba(255, 255, 255, 0.241);
+    border-radius: 15px;
+}
+
+.project-item-link:hover .icon-work {
+    visibility: visible;
+    opacity: 1;
+}
+
+.project-item-link:hover .work-heading {
+    background: linear-gradient(to left, #19cbce, #e1ff00); /* Apply the gradient as background */
+    -webkit-background-clip: text; /* Ensure the gradient is clipped to the text */
+    background-clip: text; /* Standardize background clipping for text */
+    color: transparent; /* Make the text color transparent so the gradient shows */
+}
+
+.work-description {
+    font-size: 17px !important;
+}
+
+.tag-color {
+    background-color: #03513a !important;
+}
+
 .work-footer-local-container {
+    margin-top: 200px;
     display: flex !important;
     justify-content: center !important;
 }
@@ -60,6 +99,15 @@
 
 .discover-link:hover::after {
     width: 100%;
+}
+
+.icon-work {
+    color: #1bb2b5 !important;
+    rotate: 45deg;
+    transition: visibility 0.2s, opacity 0.2s;
+    opacity: 0;
+    margin-top: -5px;
+    visibility: hidden;
 }
 
 /* Mobile devices */
