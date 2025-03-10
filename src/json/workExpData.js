@@ -45,9 +45,9 @@ export const workExpData = [
         tags: ['React', 'Bulma', 'NodeJS']
     },
     {
-        imageSrc: "/images/portfolio_uni-connect.jpg",
-        alt: "Portfolio Wordpress Custom Theme",
-        title: "Wordpress Custom Theme",
+        imageSrc: "/images/portfolio_glade-agricultural-company.jpg",
+        alt: "Portfolio Wordpress Custom Agricultural Theme",
+        title: "Wordpress Custom Agricultural Theme",
         description: "Developed a custom WordPress theme for an agriculture company, featuring tailored designs for blog posts, services, and detailed content pages.",
         live: "",
         github: "",
