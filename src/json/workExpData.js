@@ -43,5 +43,14 @@ export const workExpData = [
         live: "https://universityconnect.id",
         github: "https://github.com/yeftanmaa/web-universityconnect-prod",
         tags: ['React', 'Bulma', 'NodeJS']
+    },
+    {
+        imageSrc: "/images/portfolio_uni-connect.jpg",
+        alt: "Portfolio Wordpress Custom Theme",
+        title: "Wordpress Custom Theme",
+        description: "Developed a custom WordPress theme for an agriculture company, featuring tailored designs for blog posts, services, and detailed content pages.",
+        live: "",
+        github: "",
+        tags: ['WordPress']
     }
 ]
