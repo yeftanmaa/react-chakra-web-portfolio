@@ -13,7 +13,7 @@ export const workExpData = [
         alt: "Portfolio Web App - Sagara Project",
         title: "Sagara Foundation Project",
         description: "Web app project focused on a real-time donation system, where users could both create fundraising campaigns and contribute to existing ones",
-        live: "",
+        live: "https://sagaratechnology.com/",
         github: "",
         tags: ['React', 'Atom Components', 'Material UI']
     },
@@ -47,10 +47,37 @@ export const workExpData = [
     {
         imageSrc: "/images/portfolio_glade-agricultural-company.jpg",
         alt: "Portfolio Wordpress Custom Agricultural Theme",
-        title: "Wordpress Custom Agricultural Theme",
+        title: "Custom Agricultural Theme",
         description: "Developed a custom WordPress theme for an agriculture company, featuring tailored designs for blog posts, services, and detailed content pages.",
         live: "",
-        github: "",
+        github: "https://github.com/yeftanmaa/glade-agriculture-wp-theme",
         tags: ['WordPress']
+    },
+    {
+        imageSrc: "/images/portfolio_parkamaiore.jpg",
+        alt: "Portfolio Wordpress Parkamiore",
+        title: "Parkamaiore",
+        description: "A custom multilingual WordPress website developed for Parkamaiore.it, an online parking platform in Camaiore, Italy. The site features dedicated sections for Car, Bus, and Camper parking, and is built with WPBakery Page Builder for flexible content management. Designed to accommodate both local and international users.",
+        live: "https://parkamaiore.it",
+        github: "",
+        tags: ['WordPress', 'WP Bakery']
+    },
+    {
+        imageSrc: "/images/portfolio_homemade-academy.jpg",
+        alt: "Portfolio Wordpress Homemade Academy",
+        title: "Homemade Academy",
+        description: "Home chef in Italy sharing culinary creations through a custom WordPress website focused on food and beverages. Features a structured blog page for recipes and cooking tips, built with Elementor for flexible layout and easy content management.",
+        live: "https://www.homemadeacademy.it/blog/",
+        github: "",
+        tags: ['WordPress', 'Elementor']
+    },
+    {
+        imageSrc: "/images/portfolio_khamitrautama.jpg",
+        alt: "Portfolio CV Tenaga Surya Khamitra Utama",
+        title: "CV Khamitra Utama",
+        description: "WordPress company profile website for a solar energy provider in Indonesia. Showcases their two main products: solar-powered streetlights and solar water pumps. Built with Bootstrap elements for a clean and responsive layout.",
+        live: "http://khamitrautama.com/",
+        github: "",
+        tags: ['WordPress', 'Bootstrap']
     }
 ]

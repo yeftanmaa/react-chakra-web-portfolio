@@ -24,7 +24,7 @@ const Work = () => {
 
     const redirectBasedOnTitle = (title, live, github) => {
         if (live === "" && github === "") {
-            return "abc"; 
+            return "undefined"; 
         }
     
         if (title.toLowerCase().includes('branding')) {
