@@ -79,5 +79,32 @@ export const workExpData = [
         live: "http://khamitrautama.com/",
         github: "",
         tags: ['WordPress', 'Bootstrap']
+    },
+    {
+        imageSrc: "/images/portfolio_redcoral.jpg",
+        alt: "Portfolio CV RedCoral",
+        title: "RedCoral QA Company",
+        description: "Corporate website for a quality assurance and consultation organization, based in Saudi Arabia and partnering with Target Polska (Poland). Built to present multi-sector operations across Real Estate, Construction, and Cosmetics, with clearly structured content highlighting quality management systems, consultation, auditing, risk management, training, food safety, and environmental management frameworks supporting sustainable business growth.",
+        live: "https://redcoral.sa",
+        github: "",
+        tags: ['WordPress', 'Bootstrap']
+    },
+    {
+        imageSrc: "/images/portfolio_searmultiservicios.jpg",
+        alt: "Portfolio Sear Multiservicios",
+        title: "Sear Multiservicios",
+        description: "Corporate website for a climate control and refrigeration services company, built with WordPress and Bootstrap to ensure a clean, responsive, and scalable layout. Features structured service sections, testimonials, and CTA-driven content for medical, commercial, and residential solutions, optimized for performance, accessibility, and easy content management.",
+        live: "https://searmultiservicios.com",
+        github: "",
+        tags: ['WordPress', 'Bootstrap']
+    },
+    {
+        imageSrc: "/images/portfolio_Felett.jpg",
+        alt: "Portfolio Felett",
+        title: "E-Commerce Felett",
+        description: "Vintage fashion e-commerce platform based in Colombia, built with Shopify and Liquid to deliver a fast, scalable, and user-friendly shopping experience. The website features a custom theme, product collections, and optimized checkout flow, with a strong focus on brand storytelling, responsive design, and seamless content and inventory management for global customers.",
+        live: "https://felett.com/en",
+        github: "",
+        tags: ['Shopify', 'Liquid']
     }
 ]
