@@ -99,7 +99,7 @@ export const workExpData = [
         tags: ['WordPress', 'Bootstrap']
     },
     {
-        imageSrc: "/images/portfolio_Felett.jpg",
+        imageSrc: "/images/portfolio_felett.jpg",
         alt: "Portfolio Felett",
         title: "E-Commerce Felett",
         description: "Vintage fashion e-commerce platform based in Colombia, built with Shopify and Liquid to deliver a fast, scalable, and user-friendly shopping experience. The website features a custom theme, product collections, and optimized checkout flow, with a strong focus on brand storytelling, responsive design, and seamless content and inventory management for global customers.",
