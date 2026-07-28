@@ -67,7 +67,7 @@ export const workExpData = [
         alt: "Portfolio Wordpress Homemade Academy",
         title: "Homemade Academy",
         description: "Home chef in Italy sharing culinary creations through a custom WordPress website focused on food and beverages. Features a structured blog page for recipes and cooking tips, built with Elementor for flexible layout and easy content management.",
-        live: "https://www.homemadeacademy.it/blog/",
+        live: "https://www.homemadeacademy.it/",
         github: "",
         tags: ['WordPress', 'Elementor']
     },
@@ -106,5 +106,14 @@ export const workExpData = [
         live: "https://felett.com/en",
         github: "",
         tags: ['Shopify', 'Liquid']
+    },
+    {
+        imageSrc: "/images/portfolio_raproduction.jpg",
+        alt: "Portfolio Ra Production",
+        title: "Ra Production",
+        description: "Ra Productions was launched from the Eastern Province to serve as the bridge between inspiration and execution. We transform ideas into compelling visual content that blends the beauty of the image with the depth of its inspiration, leaving an unforgettable impact.",
+        live: "https://raproduction.com",
+        github: "",
+        tags: ['WordPress', 'Custom Theme']
     }
 ]
