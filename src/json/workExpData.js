@@ -112,7 +112,7 @@ export const workExpData = [
         alt: "Portfolio Ra Production",
         title: "Ra Production",
         description: "Ra Productions was launched from the Eastern Province to serve as the bridge between inspiration and execution. We transform ideas into compelling visual content that blends the beauty of the image with the depth of its inspiration, leaving an unforgettable impact.",
-        live: "https://raproduction.com",
+        live: "https://ra-production.com",
         github: "",
         tags: ['WordPress', 'Custom Theme']
     }
